@@ -1,0 +1,343 @@
+body {
+  margin:0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+
+a {
+  color: #00B7FF;
+}
+
+#top-header{
+  width: 100%;
+  height: 175px;
+  background: rgb(145,36,35);
+background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%, rgba(145,36,35,1) 48%, rgba(145,36,35,1) 96%, rgba(255,255,255,1) 97%, rgba(109,181,196,1) 98%);
+  padding: 0;
+  margin: 0;
+  top: 0;
+
+}
+.centeredh1{
+  font-size:30px;
+  color: white;
+  text-align: center;
+}
+
+#nav-bar{
+  background-color: #1C1D22;
+  margin-top: 0px;
+  padding: 0;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  vertical-align: middle;
+  
+
+}
+#nav-bar ul{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 30px;
+}
+#nav-bar ul li{
+  width: 10%;
+  font-family: 'Lobster Two';
+  font-size: 22px;
+  color: white;
+  transition: 0.2s linear;
+}
+#nav-bar ul li:hover{
+  background-color: black;
+}
+#nav-bar ul li a{
+  text-decoration: none;
+  color:white;
+  
+}
+#logo-medium{
+  font-size: 6vh;
+  font-family: 'Lobster';
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #6EB2C0 ;
+}
+#message-bar{
+  height: 10px;
+  margin: 0;
+    padding-left: 10px;
+  padding-right: 10px;
+  padding: 0;
+  background-color: #C82C2B;
+}
+#main-brand-header{
+  padding: 0;
+  font-size: 150px;
+  color: white;
+  display: inline;
+  
+ 
+  font-family: 'Lobster';
+  line-height: 175px;
+  
+}
+#login-body{
+  background-color: #1C1D22;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 1fr auto;
+  
+}
+#login-container{
+  background: rgb(145,36,35);
+background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%, rgba(145,36,35,1) 48%, rgba(145,36,35,1) 96%, rgba(255,255,255,1) 97%, rgba(109,181,196,1) 98%);
+  height: 500px;
+  width: auto;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 0px 0px 19px 4px #000000; 
+  box-shadow: 0px 0px 19px 4px #000000;
+
+}
+#centered-body-container{
+  background-color: #1C1D22;
+  width:70%;
+  
+  margin:0 auto;
+  padding: 10px;
+  -webkit-box-shadow: 0px 16px 50px 14px rgba(0,0,0,0.82); 
+  box-shadow: 0px 16px 50px 14px rgba(0,0,0,0.82);
+}
+#login-signup-container{
+  float: right;
+  color: white;
+  margin-top:4vw;
+  margin-right:30px;
+
+}
+#span-in-line{
+  font-size: 4vh;
+  color: #E1E1E1;
+  text-decoration: underline;
+}
+.post{
+  background-color: #e3e3e3;
+  border-radius: 5px;
+  width: 98.5%;
+  height: auto;
+  padding:10px;
+  margin-top:20px;
+  border-bottom:4px solid  #6EB2C0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:20px auto 20px;
+  font-family: 'Montserrat';
+  
+}
+.post:first-child{
+  margin-top:0;
+}
+#author-profile{
+  grid-row: 1/4;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 300px;
+  padding: 10px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 5px 0 0 0;
+  border-right: 4px solid #6EB2C0;
+  background-color:#767676;
+  font-family: 'Ubuntu';
+}
+.post-title{
+
+  font-family: 'Roboto';
+  
+  height: 20px;
+  width: 70%;
+  text-align: center;
+  font-family: 'Roboto';
+  grid-column: 1/7;
+  grid-row: 1/2;
+  
+}
+.post-title h2{
+  text-align: center;
+  margin-top: -10px;
+  font-family: 'Ubuntu';
+}
+.post-content{
+  grid-row: 1/4;
+  grid-column: 2/5;
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20px 1fr 20px;
+
+  
+}
+.post-p{
+  grid-row: 2/3;
+  grid-column: 2/5;
+}
+#author-profile-pic{
+  display: block;
+  height: 60px;
+  width: 60px;
+  background-color: black;
+  border-radius: 30px;
+  background-image: url('../images/apollo.png');
+  background-size: 60px 60px;
+  border: 1px solid #C82C2B;
+
+  
+}
+#lyra-profile-pic{
+  display: block;
+  height: 60px;
+  width: 60px;
+  background-color: black;
+  border-radius: 30px;
+  background-image: url('../images/willow.png');
+  background-size: 60px 60px;
+  border: 1px solid #C82C2B;
+
+  
+}
+#willow-profile-pic{
+  display: block;
+  height: 60px;
+  width: 60px;
+  background-color: black;
+  border-radius: 30px;
+  background-image: url('../images/lyra.png');
+  background-size: 60px 60px;
+  border: 1px solid #C82C2B;
+
+  
+}
+#author-profile-pic:nth-child(2){
+  background-image: url('../images/willow.png');
+  background-size: 60px 60px;
+}
+#author-profile-pic:nth-child(3){
+  background-image: url('../images/lyra.png');
+  background-size: 60px 60px;
+}
+
+
+#author-name{
+
+
+  
+}
+#author-profile h3{
+  display: flex; 
+  font-size: 22px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#login-password label{
+  color: white;
+  font-size: 20px;
+  font-weight: 200;
+}
+#login-username label{
+  font-size: 20px;
+  color: white;
+
+}
+#username{
+  background-color: transparent;
+  font-size: 20px;
+  color: white;
+  border:none;
+  border-bottom: 2px solid #1C1D22;
+  width: 200px;
+  padding: 7px;
+}
+#username:focus{
+  outline: none !important;
+  
+}
+#password{
+  background-color: transparent;
+  font-size: 30px;
+  color: white;
+  padding: 7px;
+  border:none;
+  border-bottom: 2px solid #1C1D22;
+  width: 200px;
+}
+#password:focus{
+  outline: none !important;
+  
+}
+#login-submit{
+  text-align: center;
+
+  background-color: #6EB2C0;
+  border-radius: 10px;
+  font-size:25px;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left:39% ;
+}
+.centered-text{
+  text-align: center;
+}
+#home{
+  background-color: #1C1D22;
+  position: absolute;
+  top:200px;
+  left: 640px;
+}
+#home a{
+  font-size:20px;
+  color:white;
+  font-family: 'Lobster Two';
+}
+#login{
+  color: white;
+  font-size: 18px;
+  background-color: transparent;
+  padding: 5px;
+}
+#signup{
+  color: white;
+  font-size: 18px;
+  background-color: transparent;
+  padding: 5px;
+}
+.post-time{
+  display: inline;
+  margin-left: 65px;
+  margin-top: 30px;
+  position: absolute;
+}
+.post-footer{
+  height: 20px;
+  width: 99%;
+  
+  
+  grid-row: 3/4;
+  grid-column: 1/4;
+  text-align: right;
+  
+  
+}
