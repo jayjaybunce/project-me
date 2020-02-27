@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 
 const commentSchema = new Schema({
@@ -17,13 +17,18 @@ const commentSchema = new Schema({
 })
 
 const postSchema = new Schema({
-    author:{
+    title: {
+        type: String,
+        required: true
+    },
+    username:{
         type: String,
         required: true,
 
     },
-    authorId:{
+    userId:{
         type: Number,
+        // ref: 'user',
         required: true
     },
     content:{
@@ -33,10 +38,14 @@ const postSchema = new Schema({
     },comments:{
         type: [commentSchema]
         
+    },
+    categories: {
+        type: [String],
+        required: true
     }
 },{
     timestamps: true
 })
 
 
-module.express = mongoose.model('Post',postSchema)
+module.exports = mongoose.model('Post',postSchema)

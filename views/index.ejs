@@ -9,7 +9,7 @@
   </head>
   <body>
     
-    <header id="top-header">
+    <header id="top-header-big">
       <h1 id="main-brand-header">ProjectMe &nbsp;<span id="span-in-line">Find your next, perfect project!</span></h1>
       <div id="login-signup-container">
         <a href="/login"><button id="login">Log In</button></a>
@@ -28,247 +28,37 @@
     </nav>
     <div id="centered-body-container">
       <h1 class="centeredh1"></h1>
-      
+      <%posts.forEach(post=>{%>
       <section class="post">
         <div id="author-profile">
           <div id="author-profile-pic"> </div>
           <h3>
-            Apollo Bunce
+            <%=post.username%>
           </h3>
           <span class="post-time">3 Days Ago</span>
+          <p>/<%=post.categories%></p>
           
         </div>
-        <p class="post-p">Hello everyone! My name is Apollo and I'm just getting started with JavaScript, I'm not sure exactly what it is, but my 
-          dad seems to like it a whole lot so please help me learn it! Please include some links to help me find some projects! I'd like to create
-          some projects centered around my interests! I love peanut butter, ribs, and rope toys. I really, really really really like rope toys, and squishy toys too!
-          Thanks in advance!
+        <p class="post-p">
+          <%=post.content%>
         </p>
         <div class="post-content">
           <div class="post-title">
-            <h2>Looking for a JS project about toys!</h2>
+            <h2><%=post.title%></h2>
           </div>
-         
+          
           <div class="post-footer">
             <button>Comment</button>
             <button>Like</button>
-          </div>
-          
-        </div>
             
+          </div>
+          
+        </div>
+        
       </section>
-      <section class="post">
-        <div id="author-profile">
-          <div id="willow-profile-pic"> </div>
-          <h3>
-            Willow Baby
-          </h3>
-          <span class="post-time">3 Days Ago</span>
-          
-        </div>
-        <p class="post-p">Hi everyone, I'm Willow-baby and DESPITE what my bitch sister thinks, Janson and mom love me like a lot more. ASIDE from that, I'm Looking
-          for projects where I get to chew on things and be really fucking cute. Any help is really appretiated! Thank you!!
-        </p>
-        <div class="post-content">
-          <div class="post-title">
-            <h2>Looking for a JS project about toys!</h2>
-          </div>
-         
-          <div class="post-footer">
-            <button>Comment</button>
-            <button>Like</button>
-          </div>
-          
-        </div>
-            
-      </section>
-      <section class="post">
-        <div id="author-profile">
-          <div id="lyra-profile-pic"> </div>
-          <h3>
-            Lyra Johnson
-          </h3>
-          <span class="post-time">3 Days Ago</span>
-          
-        </div>
-        <p class="post-p">derp here, flop there, scratch here, jump in bath there. I'm lookin 4 things to chew up in moms face, she really likes when I chew up tasty cow hooves
-          right in her face. She loves me so much, I love you mom. Thank you for the treats, can you give me more as a project. 
-        </p>
-        <div class="post-content">
-          <div class="post-title">
-            <h2>Looking for a JS project about toys!</h2>
-          </div>
-         
-          <div class="post-footer">
-            <button>Comment</button>
-            <button>Like</button>
-          </div>
-          
-        </div>
-            
-      </section>
-      <section class="post">
-        <div id="author-profile">
-          <div id="author-profile-pic"> </div>
-          <h3>
-            Apollo Bunce
-          </h3>
-          <span class="post-time">3 Days Ago</span>
-          
-        </div>
-        <p class="post-p">Hello everyone! My name is Apollo and I'm just getting started with JavaScript, I'm not sure exactly what it is, but my 
-          dad seems to like it a whole lot so please help me learn it! Please include some links to help me find some projects! I'd like to create
-          some projects centered around my interests! I love peanut butter, ribs, and rope toys. I really, really really really like rope toys, and squishy toys too!
-          Thanks in advance!
-        </p>
-        <div class="post-content">
-          <div class="post-title">
-            <h2>Looking for a JS project about toys!</h2>
-          </div>
-         
-          <div class="post-footer">
-            <button>Comment</button>
-            <button>Like</button>
-          </div>
-          
-        </div>
-            
-      </section>
-      <section class="post">
-        <div id="author-profile">
-          <div id="author-profile-pic"> </div>
-          <h3>
-            Apollo Bunce
-          </h3>
-          <span class="post-time">3 Days Ago</span>
-          
-        </div>
-        <p class="post-p">Hello everyone! My name is Apollo and I'm just getting started with JavaScript, I'm not sure exactly what it is, but my 
-          dad seems to like it a whole lot so please help me learn it! Please include some links to help me find some projects! I'd like to create
-          some projects centered around my interests! I love peanut butter, ribs, and rope toys. I really, really really really like rope toys, and squishy toys too!
-          Thanks in advance!
-        </p>
-        <div class="post-content">
-          <div class="post-title">
-            <h2>Looking for a JS project about toys!</h2>
-          </div>
-         
-          <div class="post-footer">
-            <button>Comment</button>
-            <button>Like</button>
-          </div>
-          
-        </div>
-            
-      </section>
-      <section class="post">
-        <div id="author-profile">
-          <div id="author-profile-pic"> </div>
-          <h3>
-            Apollo Bunce
-          </h3>
-          <span class="post-time">3 Days Ago</span>
-          
-        </div>
-        <p class="post-p">Hello everyone! My name is Apollo and I'm just getting started with JavaScript, I'm not sure exactly what it is, but my 
-          dad seems to like it a whole lot so please help me learn it! Please include some links to help me find some projects! I'd like to create
-          some projects centered around my interests! I love peanut butter, ribs, and rope toys. I really, really really really like rope toys, and squishy toys too!
-          Thanks in advance!
-        </p>
-        <div class="post-content">
-          <div class="post-title">
-            <h2>Looking for a JS project about toys!</h2>
-          </div>
-         
-          <div class="post-footer">
-            <button>Comment</button>
-            <button>Like</button>
-          </div>
-          
-        </div>
-            
-      </section>
-      <section class="post">
-        <div id="author-profile">
-          <div id="author-profile-pic"> </div>
-          <h3>
-            Apollo Bunce
-          </h3>
-          <span class="post-time">3 Days Ago</span>
-          
-        </div>
-        <p class="post-p">Hello everyone! My name is Apollo and I'm just getting started with JavaScript, I'm not sure exactly what it is, but my 
-          dad seems to like it a whole lot so please help me learn it! Please include some links to help me find some projects! I'd like to create
-          some projects centered around my interests! I love peanut butter, ribs, and rope toys. I really, really really really like rope toys, and squishy toys too!
-          Thanks in advance!
-        </p>
-        <div class="post-content">
-          <div class="post-title">
-            <h2>Looking for a JS project about toys!</h2>
-          </div>
-         
-          <div class="post-footer">
-            <button>Comment</button>
-            <button>Like</button>
-          </div>
-          
-        </div>
-            
-      </section>
-      <section class="post">
-        <div id="author-profile">
-          <div id="author-profile-pic"> </div>
-          <h3>
-            Apollo Bunce
-          </h3>
-          <span class="post-time">3 Days Ago</span>
-          
-        </div>
-        <p class="post-p">Hello everyone! My name is Apollo and I'm just getting started with JavaScript, I'm not sure exactly what it is, but my 
-          dad seems to like it a whole lot so please help me learn it! Please include some links to help me find some projects! I'd like to create
-          some projects centered around my interests! I love peanut butter, ribs, and rope toys. I really, really really really like rope toys, and squishy toys too!
-          Thanks in advance!
-        </p>
-        <div class="post-content">
-          <div class="post-title">
-            <h2>Looking for a JS project about toys!</h2>
-          </div>
-         
-          <div class="post-footer">
-            <button>Comment</button>
-            <button>Like</button>
-          </div>
-          
-        </div>
-            
-      </section>
-      <section class="post">
-        <div id="author-profile">
-          <div id="author-profile-pic"> </div>
-          <h3>
-            Apollo Bunce
-          </h3>
-          <span class="post-time">3 Days Ago</span>
-          
-        </div>
-        <p class="post-p">Hello everyone! My name is Apollo and I'm just getting started with JavaScript, I'm not sure exactly what it is, but my 
-          dad seems to like it a whole lot so please help me learn it! Please include some links to help me find some projects! I'd like to create
-          some projects centered around my interests! I love peanut butter, ribs, and rope toys. I really, really really really like rope toys, and squishy toys too!
-          Thanks in advance!
-        </p>
-        <div class="post-content">
-          <div class="post-title">
-            <h2>Looking for a JS project about toys!</h2>
-          </div>
-         
-          <div class="post-footer">
-            <button>Comment</button>
-            <button>Like</button>
-          </div>
-          
-        </div>
-            
-      </section>
-      
+      <%})%>
+
+
     </div>
     
   </body>

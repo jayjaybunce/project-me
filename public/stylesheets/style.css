@@ -8,15 +8,57 @@ a {
   color: #00B7FF;
 }
 
-#top-header{
+#top-header-big{
   width: 100%;
   height: 175px;
   background: rgb(145,36,35);
-background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%, rgba(145,36,35,1) 48%, rgba(145,36,35,1) 96%, rgba(255,255,255,1) 97%, rgba(109,181,196,1) 98%);
+  background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%, rgba(145,36,35,1) 48%, rgba(145,36,35,1) 96%, rgba(255,255,255,1) 97%, rgba(109,181,196,1) 98%);
   padding: 0;
   margin: 0;
   top: 0;
 
+}
+#top-header-small{
+  width: 100%;
+  height: 95px;
+  background: rgb(145,36,35);
+  background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%, rgba(145,36,35,1) 48%, rgba(145,36,35,1) 96%, rgba(255,255,255,1) 97%, rgba(109,181,196,1) 98%);
+  padding: 0;
+  margin: 0;
+  top: 0;
+
+}
+#main-brand-header{
+  padding: 0;
+  font-size: 150px;
+  color: white;
+  display: inline;
+  
+ 
+  font-family: 'Lobster';
+  line-height: 175px;
+  
+}
+#main-brand-header-small{
+  padding: 0;
+  font-size: 65px;
+  color: white;
+  display: inline;
+  
+ 
+  font-family: 'Lobster';
+  line-height: 95px;
+  
+}
+#span-in-line{
+  font-size: 4vh;
+  color: #E1E1E1;
+  text-decoration: underline;
+}
+#span-in-line-small{
+  font-size: 2vh;
+  color: #E1E1E1;
+  text-decoration: underline;
 }
 .centeredh1{
   font-size:30px;
@@ -77,17 +119,7 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
   padding: 0;
   background-color: #C82C2B;
 }
-#main-brand-header{
-  padding: 0;
-  font-size: 150px;
-  color: white;
-  display: inline;
-  
- 
-  font-family: 'Lobster';
-  line-height: 175px;
-  
-}
+
 #login-body{
   background-color: #1C1D22;
   display: grid;
@@ -97,7 +129,7 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
 }
 #login-container{
   background: rgb(145,36,35);
-background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%, rgba(145,36,35,1) 48%, rgba(145,36,35,1) 96%, rgba(255,255,255,1) 97%, rgba(109,181,196,1) 98%);
+  background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%, rgba(145,36,35,1) 48%, rgba(145,36,35,1) 96%, rgba(255,255,255,1) 97%, rgba(109,181,196,1) 98%);
   height: 500px;
   width: auto;
   grid-column: 2/3;
@@ -112,8 +144,7 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
 }
 #centered-body-container{
   background-color: #1C1D22;
-  width:70%;
-  
+  width:70%;  
   margin:0 auto;
   padding: 10px;
   -webkit-box-shadow: 0px 16px 50px 14px rgba(0,0,0,0.82); 
@@ -124,12 +155,12 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
   color: white;
   margin-top:4vw;
   margin-right:30px;
-
 }
-#span-in-line{
-  font-size: 4vh;
-  color: #E1E1E1;
-  text-decoration: underline;
+#login-signup-container-small{
+  float: right;
+  color: white;
+  margin-top:2vw;
+  margin-right:30px;
 }
 .post{
   background-color: #e3e3e3;
@@ -143,7 +174,6 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows:20px auto 20px;
   font-family: 'Montserrat';
-  
 }
 .post:first-child{
   margin-top:0;
@@ -164,16 +194,13 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
   font-family: 'Ubuntu';
 }
 .post-title{
-
   font-family: 'Roboto';
-  
   height: 20px;
   width: 70%;
   text-align: center;
   font-family: 'Roboto';
   grid-column: 1/7;
   grid-row: 1/2;
-  
 }
 .post-title h2{
   text-align: center;
@@ -184,11 +211,8 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
   grid-row: 1/4;
   grid-column: 2/5;
   display: grid;
-  
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 20px 1fr 20px;
-
-  
 }
 .post-p{
   grid-row: 2/3;
@@ -203,8 +227,6 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
   background-image: url('../images/apollo.png');
   background-size: 60px 60px;
   border: 1px solid #C82C2B;
-
-  
 }
 #lyra-profile-pic{
   display: block;
@@ -212,11 +234,9 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
   width: 60px;
   background-color: black;
   border-radius: 30px;
-  background-image: url('../images/willow.png');
+  background-image: url('../images/lyra.png');
   background-size: 60px 60px;
   border: 1px solid #C82C2B;
-
-  
 }
 #willow-profile-pic{
   display: block;
@@ -224,7 +244,7 @@ background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%,
   width: 60px;
   background-color: black;
   border-radius: 30px;
-  background-image: url('../images/lyra.png');
+  background-image: url('../images/willow.png');
   background-size: 60px 60px;
   border: 1px solid #C82C2B;
 
