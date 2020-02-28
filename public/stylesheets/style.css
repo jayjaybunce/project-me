@@ -11,6 +11,7 @@ a {
 #top-header-big{
   width: 100%;
   height: 175px;
+  overflow: hidden;
   background: rgb(145,36,35);
   background: linear-gradient(45deg, rgba(145,36,35,1) 16%, rgba(145,36,35,1) 23%, rgba(145,36,35,1) 48%, rgba(145,36,35,1) 96%, rgba(255,255,255,1) 97%, rgba(109,181,196,1) 98%);
   padding: 0;
@@ -93,7 +94,7 @@ a {
   font-family: 'Lobster Two';
   font-size: 22px;
   color: white;
-  transition: 0.2s linear;
+  transition: background 0.2s linear;
 }
 #nav-bar ul li:hover{
   background-color: black;
@@ -175,22 +176,102 @@ a {
   grid-template-rows:20px auto 20px;
   font-family: 'Montserrat';
 }
+
 .post:first-child{
   margin-top:0;
+}
+.new-post{
+  background-color: #e3e3e3;
+  border-radius: 5px;
+  width: inherit +10%;
+  height: 210px;
+  padding:10px;
+  margin-top:20px;
+  border-bottom:6px solid  #C82C2B;
+  border-left:2px solid  #C82C2B;
+  border-right:2px solid  #C82C2B;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:20px auto 20px;
+  font-family: 'Montserrat';
+ 
+}
+.post-stuff{
+ 
+}
+.post-form{
+  grid-column: 1/5;
+  width: 100%;
+  height: 210px;
+  display: block;  
+}
+#post-content-input{
+  display: block;
+  box-sizing: border-box;
+  width: inherit;
+  height: 115px;
+  resize:none;
+  grid-row: 2/4;
+  grid-column: 3/4;
+  background-color: white;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  color: #1C1D22;
+  font-family: 'Roboto';
+  padding: 10px;
+  margin-top: 10px;
+  float: right;
+  font-size: 15px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+#post-title-input{
+  font-size: 25px;
+  font-family: 'Roboto';
+  outline: none;
+  width: 400px;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #1A1B1F;
+}
+#post-button{
+  height: 40px;
+  width: 80px;
+  border-radius: 0 0 10px 0;
+  color: white;
+  font-size: 25px;
+  padding: 1px;
+  
+  background-color: #1A1B1F;
+  font-family: 'Lobster Two';
+  z-index: 9;
+  float: right;
+  display: block;
+  margin-top: -40px;
+}
+#post-category-input{
+  font-size: 20px;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 #author-profile{
   grid-row: 1/4;
   grid-column: 1/2;
   display: flex;
   flex-direction: row;
-  height: 100%;
-  width: 300px;
+  
+  
   padding: 10px;
   margin-top: -10px;
   margin-left: -10px;
   border-radius: 5px 0 0 0;
-  border-right: 4px solid #6EB2C0;
-  background-color:#767676;
+  
+  
   font-family: 'Ubuntu';
 }
 .post-title{
@@ -222,54 +303,34 @@ a {
   display: block;
   height: 60px;
   width: 60px;
-  background-color: black;
+  
   border-radius: 30px;
-  background-image: url('../images/apollo.png');
-  background-size: 60px 60px;
-  border: 1px solid #C82C2B;
-}
-#lyra-profile-pic{
-  display: block;
-  height: 60px;
-  width: 60px;
-  background-color: black;
-  border-radius: 30px;
-  background-image: url('../images/lyra.png');
-  background-size: 60px 60px;
-  border: 1px solid #C82C2B;
-}
-#willow-profile-pic{
-  display: block;
-  height: 60px;
-  width: 60px;
-  background-color: black;
-  border-radius: 30px;
-  background-image: url('../images/willow.png');
-  background-size: 60px 60px;
-  border: 1px solid #C82C2B;
 
+  position: absolute;
+  
+  background-size: 60px 60px;
   
 }
-#author-profile-pic:nth-child(2){
-  background-image: url('../images/willow.png');
-  background-size: 60px 60px;
+.user-profile-pic{
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
 }
-#author-profile-pic:nth-child(3){
-  background-image: url('../images/lyra.png');
-  background-size: 60px 60px;
-}
-
 
 #author-name{
 
 
   
 }
+.category-tag{
+  float: left;
+  color: #BB2725;
+}
 #author-profile h3{
-  display: flex; 
+  display: inline; 
   font-size: 22px;
   margin-top: 5px;
-  margin-left: 5px;
+  margin-left: 100px;
 }
 #login-password label{
   color: white;
@@ -361,3 +422,36 @@ a {
   
   
 }
+
+
+#user-blue{
+  text-decoration: underline;
+  font-size: 18px;
+  text-decoration-color: #6EB2C0;
+}
+
+
+@media only screen and (width: 900px) {
+  body {
+    background-color: lightblue;
+  }
+  #user-tag{
+    float: left;
+  }
+  #post-title-input{
+    font-size: 20px;
+    width: auto;
+    float: left;
+  }
+  #author-profile-pic{
+    display: none;
+  }
+  #author-profile h3{
+   margin-left: 0;
+  }
+  #post-content-input{
+    height: 100px;
+  }
+}
+
+

@@ -3,12 +3,16 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+require('dotenv').config();
 require('./config/database')
+require('./config/passport')
+
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const postRouter = require('./routes/post');
 const signupRouter = require('./routes/signup')
-
+const session = require('express-session')
+const passport = require('passport')
 let app = express();
 
 // view engine setup
@@ -21,10 +25,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+
+
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
-app.use('/post',postRouter);
+app.use('/posts',postRouter);
 
 
 // catch 404 and forward to error handler

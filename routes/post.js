@@ -3,10 +3,13 @@ const router = express.Router()
 const postCtrl = require('../controllers/post')
 
 
-router.get('/',postCtrl.new)
-router.post('/',postCtrl.create)
+router.get('/',postCtrl.index)
+router.post('/', isLoggedIn, postCtrl.create)
 
-
+function isLoggedIn(req,res,next){
+    if(req.isAuthenticated()) return next();
+    res.redirect('/auth/google')
+}
 
 
 

@@ -1,17 +1,19 @@
 const express = require('express')
 const router = express.Router()
 const Post = require('../models/post')
-
+const mongoose = require('mongoose')
 
 module.exports = {
     index,
 }
 
 function index(req,res){
-    Post.find({}).then(function(posts){
+    Post.find({}).populate('username').then(function(posts){
+        console.log(posts)
         res.render('index',{
+            posts,
             title: 'ProjectMe',
-            posts
+            user: req.user
         })
     })
 }

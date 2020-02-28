@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Raleway|Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+    <header id="top-header-small">
+      <h1 id="main-brand-header-small">ProjectMe &nbsp;<span id="span-in-line-small">Find your next, perfect project!</span></h1>
+      <div id="login-signup-container-small">
+        <%if(user){%>
+          
+          
+          
+          <a href="/logout"><button id="login">Log Out</button></a>
+          <%}else{%>
+            <a href="/auth/google"><button id="login">Log In With Google</button></a>
+          
+        <%}%>
+        
+      </div>
+    </header>
+    <div id="message-bar"></div>
+    <nav id="nav-bar">
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/">ProjectMe</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/Posts">Posts</a></li>
+        <li><a href="/More">More</a></li>
+      </ul>
+    </nav>
+    <div id="centered-body-container">
+      <h1 class="centeredh1"></h1>
+      <%if(user){%>
+        <section class="new-post">
+          <form action="/posts" method="POST" autocomplete="off" class="post-form">
+            <input type="text" name="title" placeholder="Post Title" id="post-title-input">
+            <span id="user-tag">
+              Posting as <span id="user-blue"><%=user.username%></span>
+  
+            </span>
+            
+            <br>
+            <br>
+            <select name="category" id="post-category-input" placeholder="Category">
+              <option value="" disabled selected>Select Category</option>
+              <option name="programming" value="programming">Programming</option>
+              <option name="carpentry" value="carpentry">Carpentry</option>
+              <option name="blacksmithing" value="blacksmithing">Blacksmithing</option>
+              <option name="machining" value="machining">Machining</option>
+              <option name="art" value="art">Art</option>
+              <option name="uxdesign" value="uxdesign">UX Design</option>
+              <option name="math" value="math">Math</option>
+              <option name="metalworking" value="metalworking">Metalworking</option>
+  
+            </select>
+            <textarea name="content" id="post-content-input" placeholder="......">
+            </textarea>
+            <button type="submit" id="post-button">Post</button>
+          </form>
+          </select>       
+        </section>
+        <%}else{%>
+          
+      <%}%>
+      
+        <%posts.forEach(post=>{%>
+          <section class="post">
+            <div id="author-profile">
+              <div id="author-profile-pic">
+                <img src="<%=post.username.toObject().avatar%>%>" class="user-profile-pic">  
+              </div>
+              <h3>
+                <%if(post.username){%>
+                <%=post.username.toObject().username%>
+                <%}%>
+                
+              </h3>
+              <!-- <span class="post-time">3 Days Ago</span> -->
+              <!-- <p>/<%=post.categories%></p> -->
+              
+            </div>
+            <p class="post-p">
+              <%=post.content%>
+            </p>
+            <div class="post-content">
+              <div class="post-title">
+                <h2><%=post.title%></h2>
+              </div>
+              
+              <div class="post-footer">
+                <span class="category-tag">
+                  <%=post.category%>
+                </span>
+                <button>Comment</button>
+                <button>Like</button>
+                
+              </div>
+              
+            </div>
+            
+          </section>
+          <%})%>
+        
+        
+        
+        
+        
+      
+    </div>
+    
+  </body>
+</html>

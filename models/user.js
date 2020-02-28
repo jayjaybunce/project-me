@@ -1,16 +1,12 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
+
+
+
+
 const userSchema = new Schema({
-    firstName: {
-        type: String,
-        required: true
-        
-    },
-    lastName: {
-        type: String,
-        required: true
-    },
     username: {
         type: String,
         required: true
@@ -19,20 +15,12 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    password:{
+    avatar:{
         type: String,
-        required: true
+        require: true,
     },
-    loginDisabled: {
-        type: Boolean,
-        default: False
-    },
-    loginDisabledTime: {
-        type: Date,
-
-    },
-    accesstoken: {
-        type: String
-    }
+    googleId: String
     
 })
+
+module.exports = mongoose.model('User',userSchema)

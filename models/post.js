@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const User = require('./user')
 
 
 const commentSchema = new Schema({
@@ -7,10 +8,7 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
-    authorId:{
-        type: Number,
-        required: true
-    },
+    googleId: String,
     content:{
         type: String
     }
@@ -22,15 +20,12 @@ const postSchema = new Schema({
         required: true
     },
     username:{
-        type: String,
-        required: true,
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        
 
     },
-    userId:{
-        type: Number,
-        // ref: 'user',
-        required: true
-    },
+    googleId: String,
     content:{
         type: String,
         required: true,
@@ -39,8 +34,8 @@ const postSchema = new Schema({
         type: [commentSchema]
         
     },
-    categories: {
-        type: [String],
+    category: {
+        type: String,
         required: true
     }
 },{
