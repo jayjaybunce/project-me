@@ -76,14 +76,13 @@
             <img src="<%=post.username.toObject().avatar%>%>" class="user-profile-pic">  
           </div>
           <h3>
-            <%if(post.username){%>
+            
             <%=post.username.toObject().username%>
-            <%}%>
+            
             
           </h3>
-          <!-- <span class="post-time">3 Days Ago</span> -->
-          <!-- <p>/<%=post.categories%></p> -->
-          
+
+                
         </div>
         <p class="post-p">
           <%=post.content%>
@@ -91,18 +90,30 @@
         <div class="post-content">
           <div class="post-title">
             <h2><%=post.title%></h2>
+
           </div>
           
           <div class="post-footer">
             <span class="category-tag">
               <%=post.category%>
             </span>
-            <button>Comment</button>
-            <button>Like</button>
-            
+            <%if(user){%>
+            <%if(post.username.toObject().googleId===user.googleId){%>
+            <button class="comment-button">Comment</button>
+            <button class="like-button">Like</button>
+            <button type="submit" class="edit-button">Edit</button>  
+            <button type="submit" class="delete-button">Delete</button>          
+            <%}else{%>
+            <button class="comment-button">Comment</button>
+            <button class="like-button">Like</button>
+            <button type="submit" class="edit-button-hidden">Edit</button>  
+            <button type="submit" class="delete-button-hidden">Delete</button>     
+            <%}%>
+            <%}%>
           </div>
           
         </div>
+        
         
       </section>
       <%})%>

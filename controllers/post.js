@@ -36,9 +36,7 @@ function getUserPosts(req,res){
 }
 
 function index(req,res){
-    console.log(req.user._id)
     Post.find({"username": req.user._id}).populate('username').then(function(posts){
-        console.log(posts)
         res.render('posts',{
             posts,
             title: `${req.user.username}`,

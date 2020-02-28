@@ -13,18 +13,20 @@
 <br>
 Database will follow the following structure
 
-![Database ERD Structure](https://imgur.com/a3EKauP.png)
+![Database ERD Structure](https://i.imgur.com/7mq8JpX.png)
 
 ## Fireframe for landing, login and signup pages
 
 ### Landing Page
-![Landing Page](https://i.imgur.com/pS41D5J.png)
-### Login Page
-![Landing Page](https://i.imgur.com/meTDt2P.png)
-### Signup Page
-![Landing Page](https://i.imgur.com/hUoRboL.png)
+![Landing Page](https://i.imgur.com/1kTdLzW.png)
+### After Login
+![Landing Page](https://i.imgur.com/tz1uezl.png)
+### Posting Index Page
+![Landing Page](https://i.imgur.com/llXDXsr.png)
+### Posts Page
+![Landing Page](https://i.imgur.com/fNQR7Zk.png)
 
-
+## Trello: https://trello.com/b/ZpDc0BVY/projectme
 ### To-Do - Updating as features and/or user stories are added.
 *   [x] Create wireframe for landing page
 *   [x] Create wireframe for login page

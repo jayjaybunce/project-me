@@ -10,6 +10,7 @@ module.exports = {
 function index(req,res){
     Post.find({}).populate('username').then(function(posts){
         console.log(posts)
+        console.log(req.user)
         res.render('index',{
             posts,
             title: 'ProjectMe',

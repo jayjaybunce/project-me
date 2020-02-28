@@ -148,8 +148,8 @@ a {
   width:70%;  
   margin:0 auto;
   padding: 10px;
-  -webkit-box-shadow: 0px 16px 50px 14px rgba(0,0,0,0.82); 
-  box-shadow: 0px 16px 50px 14px rgba(0,0,0,0.82);
+  -webkit-box-shadow: 0px 10px 13px 2px #000000; 
+  box-shadow: 0px 10px 13px 2px #000000;
 }
 #login-signup-container{
   float: right;
@@ -455,3 +455,82 @@ a {
 }
 
 
+.delete-button{
+  
+  height: 30px;
+  width: 60px;
+  border-radius: 0 0 10px 0;
+  color: white;
+  font-size: 20px;
+  padding: 1px;
+  margin-right: -19px;
+  background-color: #B93B34;
+  font-family: 'Lobster Two';
+  z-index: 9;
+  
+  
+}
+
+
+.edit-button{
+  height: 30px;
+  width: 60px;
+  border-radius: 0 0 10px 0;
+  color: white;
+  font-size: 20px;
+  padding: 1px;
+  background-color: #7DB1BE;
+  font-family: 'Lobster Two';
+  z-index: 9;
+  
+  
+}
+.comment-button{
+  margin-right: 20px;
+  background-color: #7DB1BE;
+  font-size: 15px;
+  color: white;
+  border: none;
+  border-radius: 5px 5px 0 0;
+}
+
+
+.like-button{
+  margin-right: 20px;
+  background-color: #7DB1BE;
+  border: none;
+  border-radius: 5px 5px 0 0;
+  font-size: 15px;
+  color: white;
+}
+.delete-button-hidden{
+  
+  height: 30px;
+  width: 60px;
+  border-radius: 0 0 10px 0;
+  color: white;
+  font-size: 20px;
+  padding: 1px;
+  margin-right: -19px;
+  background-color: #B93B34;
+  font-family: 'Lobster Two';
+  z-index: 9;
+  visibility: hidden;
+  
+  
+}
+
+
+.edit-button-hidden{
+  height: 30px;
+  width: 60px;
+  border-radius: 0 0 10px 0;
+  color: white;
+  font-size: 20px;
+  padding: 1px;
+  background-color: #7DB1BE;
+  font-family: 'Lobster Two';
+  z-index: 9;
+  visibility: hidden;
+  
+}
