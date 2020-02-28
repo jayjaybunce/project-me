@@ -15,7 +15,7 @@ Database will follow the following structure
 
 ![Database ERD Structure](https://i.imgur.com/7mq8JpX.png)
 
-## Fireframe for landing, login and signup pages
+## Wireframe for landing, login and signup pages
 
 ### Landing Page
 ![Landing Page](https://i.imgur.com/1kTdLzW.png)
