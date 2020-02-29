@@ -10,6 +10,7 @@ require('./config/passport')
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const postRouter = require('./routes/post');
+const commentsRouter = require('./routes/comments')
 const signupRouter = require('./routes/signup')
 const session = require('express-session')
 const passport = require('passport')

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>ProjectMe: <%= title %></title>
     <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Raleway|Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
     
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="/images/logo.png">
   </head>
   <body>
     
@@ -16,6 +17,7 @@
           
           
           
+          Welcome! <span id="user-blue"><%=user.username%></span>
           <a href="/logout"><button id="login">Log Out</button></a>
           <%}else{%>
             <a href="/auth/google"><button id="login">Log In With Google</button></a>
@@ -47,8 +49,8 @@
             
             <br>
             <br>
-            <select name="category" id="post-category-input" placeholder="Category">
-              <option value="" disabled selected>Select Category</option>
+            <select name="category" id="post-category-input" placeholder="Category" required>
+              <option value="" disabled selected >Select Category</option>
               <option name="programming" value="programming">Programming</option>
               <option name="carpentry" value="carpentry">Carpentry</option>
               <option name="blacksmithing" value="blacksmithing">Blacksmithing</option>
@@ -57,7 +59,12 @@
               <option name="uxdesign" value="uxdesign">UX Design</option>
               <option name="math" value="math">Math</option>
               <option name="metalworking" value="metalworking">Metalworking</option>
-  
+              <option name="writing" value="writing">Writing</option>
+              <option name="woodworking" value="woodworking">Woodworking</option>
+              <option name="graphicdesign" value="graphicdesign">Graphic Design</option>
+              <option name="createiveprojects" value="createiveprojects">Creative Projects</option>
+              <option name="miscellaneous" value="miscellaneous">Miscellaneous</option>
+              
             </select>
             <textarea name="content" id="post-content-input" placeholder="......">
             </textarea>
@@ -90,8 +97,10 @@
             </p>
             <div class="post-content">
               <div class="post-title">
-                <h2><%=post.title%></h2>
+                <h2><%=post.title%><br></h2>
+               
               </div>
+             
               
               <div class="post-footer">
                 <span class="category-tag">
@@ -102,7 +111,7 @@
                 
               </div>
               
-            </div>
+            
             
           </section>
           <%})%>

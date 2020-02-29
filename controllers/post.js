@@ -11,6 +11,8 @@ module.exports = {
 function newPost(req,res){
     
 }
+
+
 function create(req,res){
     let newPost = new Post({
         title: req.body.title,

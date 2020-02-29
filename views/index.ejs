@@ -4,8 +4,9 @@
     <title><%= title %></title>
     <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Raleway|Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
-    
+    <link rel="icon" href="/images/logo.png">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script defer src="javascripts/main.js"></script>
   </head>
   <body>
     
@@ -36,6 +37,7 @@
     </nav>
     <div id="centered-body-container">
       <h1 class="centeredh1"></h1>
+      
     <%if(user){%>
       <section class="new-post">
         <form action="/posts" method="POST" autocomplete="off" class="post-form">
@@ -70,10 +72,10 @@
     <%}%>
       
       <%posts.forEach(post=>{%>
-      <section class="post">
+      <section class="post" data-id="<%=post._id%>">
         <div id="author-profile">
           <div id="author-profile-pic">
-            <img src="<%=post.username.toObject().avatar%>%>" class="user-profile-pic">  
+            <img src="<%=post.username.toObject().avatar%>" class="user-profile-pic"/>  
           </div>
           <h3>
             
@@ -98,23 +100,34 @@
               <%=post.category%>
             </span>
             <%if(user){%>
-            <%if(post.username.toObject().googleId===user.googleId){%>
-            <button class="comment-button">Comment</button>
-            <button class="like-button">Like</button>
-            <button type="submit" class="edit-button">Edit</button>  
-            <button type="submit" class="delete-button">Delete</button>          
-            <%}else{%>
-            <button class="comment-button">Comment</button>
-            <button class="like-button">Like</button>
-            <button type="submit" class="edit-button-hidden">Edit</button>  
-            <button type="submit" class="delete-button-hidden">Delete</button>     
-            <%}%>
+              <%if(post.username.toObject().googleId===user.googleId){%>
+              <button class="comment-button" data-id="<%=post._id%>">Comment</button>
+              <button class="like-button">Like</button>
+              <button type="submit" class="edit-button">Edit</button>  
+              <button type="submit" class="delete-button">Delete</button>          
+              <%}else{%>
+              <button class="comment-button" data-id="<%=post._id%>">Comment</button>
+              <button class="like-button">Like</button>
+  
+              <%}%>
+            
+          </div>
+          <%}%>
+        </div>
+
+        
+        
+      </section>
+        <section class="post-comment-wrapper" data-id="<%=post._id%>">
+          <form action="/posts/<%=post._id%>/comments" class="comment-form" method="POST">
+            <textarea name="commentContent" class="comment-content-input"></textarea>
+            <button type="submit" class="comment-post-button">Post</button>
+          </form>
+          <div id="comments-wrapper">
+          <%if(post.comments){%>
+            <%=post.comments%>
             <%}%>
           </div>
-          
-        </div>
-        
-        
       </section>
       <%})%>
 
