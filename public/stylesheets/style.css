@@ -416,7 +416,7 @@ a {
 .post-footer{
   height: 20px;
   width: 99%;
-  
+
   
   grid-row: 3/4;
   grid-column: 1/4;
@@ -486,7 +486,10 @@ a {
   color: white;
   font-size: 20px;
   padding: 1px;
-  margin-right: -15px;
+  float: right;
+  
+  margin-right: -17px;
+  display: block;
   background-color: #B93B34;
   font-family: 'Lobster Two';
   z-index: 9;
@@ -502,6 +505,8 @@ a {
   color: white;
   font-size: 20px;
   padding: 1px;
+  
+  margin-right: 10px;
   background-color: #7DB1BE;
   font-family: 'Lobster Two';
   z-index: 9;
@@ -509,22 +514,30 @@ a {
   
 }
 .comment-button{
-  margin-right: 20px;
+  margin-right: 10px;
   background-color: #7DB1BE;
   font-size: 15px;
   color: white;
   border: none;
   border-radius: 5px 5px 0 0;
+  margin-top: 0px;
+}
+.comment-button-bottomed{
+  margin-top: 7px;
 }
 
 
 .like-button{
-  margin-right: 20px;
+  margin-right: 10px;
   background-color: #7DB1BE;
   border: none;
   border-radius: 5px 5px 0 0;
   font-size: 15px;
   color: white;
+}
+.like-button-bottomed{
+  margin-right: 130px;
+  
 }
 .delete-button-hidden{
   
@@ -535,6 +548,7 @@ a {
   font-size: 20px;
   padding: 1px;
   margin-right: -19px;
+  
   background-color: #B93B34;
   font-family: 'Lobster Two';
   z-index: 9;
@@ -611,4 +625,7 @@ a {
   background-color: #ededed;
   border-radius: 20px;
   padding: 10px;
+}
+.delete-form{
+  float: right;
 }

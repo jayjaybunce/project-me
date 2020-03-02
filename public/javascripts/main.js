@@ -13,6 +13,7 @@ function handleClick(evt){
         fetch(url).then(fResponse=>{            
             return fResponse.json()
         }).then(data=>{
+            console.log(data)
             for(let i = 0;i<=data.length-1;i++){
                 let authorEl = commentContainerEls[i].querySelector('.comment-author')
                 let contentEl = commentContainerEls[i].querySelector('.comment-content')

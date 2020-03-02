@@ -4,23 +4,44 @@ const Post = require('../models/post')
 
 module.exports = {
     create,
+    delete: deleteComment,
 }
 
 
 function create(req,res){
-    if(req.body.content){
+    console.log(req.user.username)
+    console.log(req.body)
+    if(req.body.commentContent){
         Post.findById(req.params.id).then(post=>{
+            
             post.comments.push({
                 author: req.user.username,
                 content: req.body.commentContent
             })
             post.save(function(err,post){
                 if(err) console.log(err)
-                console.log(post)
                 res.redirect('/')
             })
         })
     }else{
         res.redirect('/')
     }
+}
+
+function deleteComment(req,res){
+    Post.findById(req.params.id).then(post=>{
+       post.comments.forEach((comment,index)=>{
+           if(comment.id===req.params.cId){
+               post.comments.splice(index,1)
+               
+           }
+       })
+       post.save()
+        
+    }).then(index=>{
+        console.log(index)
+        res.redirect('/')
+    }).catch(error=>{
+        if(error) console.log(error)
+    })
 }

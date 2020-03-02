@@ -2,16 +2,18 @@ const mongoose = require('mongoose')
 const Post = require('../models/post')
 
 module.exports = {
-    new: newPost,
     create,
-    index
+    index,
+    delete: deletePost
 }
 
 
-function newPost(req,res){
-    
+function deletePost(req,res){
+    Post.findById(req.params.id).then(post=>{
+        post.remove()
+        res.redirect('/')
+    })
 }
-
 
 function create(req,res){
     let newPost = new Post({

@@ -101,15 +101,35 @@
             </span>
             <%if(user){%>
               <%if(post.username.toObject().googleId===user.googleId){%>
-              
-                <button class="comment-button" data-id="<%=post._id%>">Comment</button>
+                
+                <button class="comment-button" data-id="<%=post._id%>">
+                  <%if(post.comments.length>1){%>
+                    View <%=post.comments.length%> Comments
+                  <%}else if(post.comments.length === 1){%>
+                    View <%=post.comments.length%> Comment
+                  <%}else{%>
+                    Comment
+                  <%}%>
+                
+                </button>
               
               <button class="like-button">Like</button>
               <button type="submit" class="edit-button">Edit</button>  
-              <button type="submit" class="delete-button">Delete</button>          
+              <form class="delete-form"action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+                <button type="submit" class="delete-button">Delete</button>          
+              </form>
               <%}else{%>
-              <button class="comment-button" data-id="<%=post._id%>">Comment</button>
-              <button class="like-button">Like</button>
+                <button class="comment-button comment-button-bottomed" data-id="<%=post._id%>">
+                  <%if(post.comments.length>1){%>
+                    View <%=post.comments.length%> Comments
+                  <%}else if(post.comments.length === 1){%>
+                    View <%=post.comments.length%> Comment
+                  <%}else{%>
+                    Comment
+                  <%}%>
+                
+                </button>
+              <button class="like-button like-button-bottomed">Like</button>
   
               <%}%>
             
@@ -139,8 +159,11 @@
                       <p class="comment-content">
                         
                       </p>
+                      
                       <button>Edit</button>
-                      <button>Delete</button>
+                      <form action="/posts/<%=post.id%>/comments/<%=comment.id%>?_method=DELETE" method="POST">
+                        <button>Delete</button>
+                      </form>
                     </div>
                     
                     <%}else{%>
