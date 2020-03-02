@@ -5,6 +5,7 @@ const Post = require('../models/post')
 module.exports = {
     create,
     delete: deleteComment,
+    update
 }
 
 
@@ -44,4 +45,21 @@ function deleteComment(req,res){
     }).catch(error=>{
         if(error) console.log(error)
     })
+}
+
+function update(req,res){
+    Post.findById(req.params.id).then(post=>{
+        post.comments.forEach(comment=>{
+            console.log(comment.id===req.params.cId)
+            if(comment.id===req.params.cId){
+                
+                comment.content = req.body.content
+            }
+        })
+        post.save()
+    }).catch(error=>{
+        if(error) console.log(error)
+    })
+    
+    res.redirect('/')
 }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProjectMe: <%= title %></title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Raleway|Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="/images/logo.png">
+  </head>
+  <body>
+    
+    <header id="top-header-small">
+      <h1 id="main-brand-header-small">ProjectMe &nbsp;<span id="span-in-line-small">Find your next, perfect project!</span></h1>
+      <div id="login-signup-container-small">
+        <%if(user){%>
+          
+          
+          
+          Welcome! <span id="user-blue"><%=user.username%></span>
+          <a href="/logout"><button id="login">Log Out</button></a>
+          <%}else{%>
+            <a href="/auth/google"><button id="login">Log In With Google</button></a>
+          
+        <%}%>
+        
+      </div>
+    </header>
+    <div id="message-bar"></div>
+    <nav id="nav-bar">
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/">ProjectMe</a></li>
+        <li><a href="/categories">Categories</a></li>
+        <li><a href="/Posts">Posts</a></li>
+        <li><a href="/More">More</a></li>
+      </ul>
+    </nav>
+    <div id="centered-body-container">
+      <div class="categories-container">
+          <%categories.forEach(cat=>{%>
+            <div class="category-container">
+                <a href="/categories/<%=cat.split(' ').join('-').toLowerCase()%>"><%=cat%></a>
+            </div>
+            <%})%>
+      </div>
+    </div>
+    
+  </body>
+</html>

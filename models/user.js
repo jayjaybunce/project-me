@@ -19,7 +19,8 @@ const userSchema = new Schema({
         type: String,
         require: true,
     },
-    googleId: String
+    googleId: String,
+    favorites: [String],
     
 })
 

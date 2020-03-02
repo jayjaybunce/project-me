@@ -154,8 +154,9 @@ a {
 #login-signup-container{
   float: right;
   color: white;
-  margin-top:4vw;
+  margin-top:2vw;
   margin-right:30px;
+  
 }
 #login-signup-container-small{
   float: right;
@@ -643,11 +644,126 @@ a {
 }
 .update-post-button{
   float: right;
-  margin-top: -20px;
-  z-index: 10;
+  margin-top: -31px;
+  margin-right: -10px;
+  display: block;
+  position: relative;
+  z-index: 9;
+  background-color: #1A1B1F;
+  font-family: 'Lobster Two';
+  color: white;
+  padding: 2px;
+  font-size:17px;
+  border-radius: 0 0 10px 0;
+
 }
 .update-post-form{
   z-index: 0;
   grid-row: 2/3;
   grid-column: 2/5;
+}
+.comment-edit-button{
+  background-color: #7DB1BE;
+  font-family: 'Lobster Two';
+  color: white;
+  padding: 4px;
+  font-size: 16px;
+  display: inline;
+}
+.comment-delete-button{
+  background-color: #B93B34;
+  font-family: 'Lobster Two';
+  color: white;
+  padding: 4px;
+  font-size:16px;
+  display: inline;
+  margin-left: 10px;
+}
+.comment-footer{
+  display: flex;
+}
+
+.edit-comment-button{
+  float: right;
+  font-size:16px;
+  background-color: #1A1B1F;
+  font-family: 'Lobster Two';
+  color: white;
+  border-radius: 0 0 5px 0;
+  margin-top: -28px;
+  position: relative;
+  z-index: 9;
+  
+}
+.edit-comment-input{
+  width: 98%;
+  height: 50px;
+  resize: none;
+  padding: 5px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+.edit-comment-form{
+  width: 100%;
+  
+  margin-bottom: 10px;
+}
+.edit-form-container{
+  
+}
+.category-container{
+  width: auto;
+  font-size:40px;
+  color: white;
+  font-family: 'Montserrat';
+  padding: 10px;
+  margin-top: 70px;
+  background: rgb(46,47,51);
+  background: linear-gradient(45deg, rgba(46,47,51,1) 95%, rgba(110,178,192,1) 95%);
+  border-bottom: 4px solid #6EB2C0;
+  
+  
+}
+.capitalize{
+  text-transform: capitalize;
+}
+.category-container a{
+  text-decoration: none;
+  color: inherit;
+}
+.category-container:nth-child(odd){
+  border-bottom: 4px solid #B93B34;
+  background: rgb(46,47,51);
+  background: linear-gradient(45deg, rgba(46,47,51,1) 95%, rgba(185,59,52,1) 95%);
+}
+.categories-container{
+  margin: 0 auto;
+  margin-top: 7vw;
+  margin-bottom: 150px;
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.favorite-container{
+  display: inherit;
+}
+.favorite-button{
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  filter: brightness(100);
+}
+.favorite-button-favorited{
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  
+}
+#blue{
+  color:#6EB2C0;
 }

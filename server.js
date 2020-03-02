@@ -12,8 +12,10 @@ const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const postRouter = require('./routes/post');
 const commentsRouter = require('./routes/comments')
+const categoriesRouter = require('./routes/categories')
 const apiRouter = require('./routes/api')
 const signupRouter = require('./routes/signup')
+const userRouter = require('./routes/user')
 const session = require('express-session')
 const passport = require('passport')
 let app = express();
@@ -33,16 +35,16 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
-}))
-app.use(passport.initialize())
-app.use(passport.session())
-
-
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/posts',postRouter);
-app.use('/api', apiRouter)
+app.use('/api', apiRouter);
+app.use('/categories',categoriesRouter);
+app.use('/user',userRouter);
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {

@@ -17,6 +17,7 @@
           
           
           
+          Welcome! <span id="user-blue"><%=user.username%></span>
           <a href="/logout"><button id="login">Log Out</button></a>
           <%}else{%>
             <a href="/auth/google"><button id="login">Log In With Google</button></a>
@@ -159,11 +160,16 @@
                       <p class="comment-content">
                         
                       </p>
-                      
-                      <button>Edit</button>
-                      <form action="/posts/<%=post.id%>/comments/<%=comment.id%>?_method=DELETE" method="POST">
-                        <button>Delete</button>
-                      </form>
+                      <div class="edit-form-container">
+
+                      </div>
+                      <span class="comment-footer">
+
+                        <button class="comment-edit-button" data-id="<%=comment.id%>">Edit</button>
+                        <form action="/posts/<%=post.id%>/comments/<%=comment.id%>?_method=DELETE" method="POST">
+                          <button class="comment-delete-button">Delete</button>
+                        </form>
+                      </span>
                     </div>
                     
                     <%}else{%>

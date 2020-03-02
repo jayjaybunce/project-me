@@ -8,6 +8,8 @@ router.post('/', isLoggedIn, postCtrl.create)
 router.delete('/:id', isLoggedIn , postCtrl.delete)
 router.post('/:id/comments', isLoggedIn, commentsCtrl.create)
 router.delete('/:id/comments/:cId',isLoggedIn,commentsCtrl.delete)
+router.put('/:id/comments/:cId', isLoggedIn,commentsCtrl.update)
+router.put('/:id',isLoggedIn,postCtrl.update)
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()) return next();
     res.redirect('/auth/google')

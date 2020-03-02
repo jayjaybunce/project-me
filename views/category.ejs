@@ -33,11 +33,23 @@
         <li><a href="/">ProjectMe</a></li>
         <li><a href="/categories">Categories</a></li>
         <li><a href="/Posts">Posts</a></li>
-        <li><a href="/More">More</a></li>
+        <%if(user){%>
+            <li><a href="/user"><span id="blue">Profile</span></a></li>
+        <%}%>
+    
       </ul>
     </nav>
     <div id="centered-body-container">
-      <h1 class="centeredh1"></h1>
+      <span class="favorite-container"><h1 class="centeredh1 capitalize"><%=title%>
+        <%if(user){%>
+            <%if(user.favorites.includes(title)){%>
+                <form action="/user/favorites/<%=title%>" method="post"><button class="favorite-button-favorited">⭐</button>
+            <%}else{%>
+
+                <form action="/user/favorites/<%=title%>" method="post"><button class="favorite-button">⭐</button>
+            <%}%>
+        <%}%>
+        </form></h1></span>
       
       <%if(user){%>
         <section class="new-post">
@@ -76,6 +88,7 @@
         <section class="post" data-id="<%=post._id%>">
           <div id="author-profile">
             <div id="author-profile-pic">
+                
               <img src="<%=post.username.toObject().avatar%>" class="user-profile-pic"/>  
             </div>
             <h3>

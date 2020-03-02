@@ -17,8 +17,10 @@ passport.use(new GoogleStrategy({
                 if(!user.avatar){
                     user.avatar = profile.photos[0].value
                     return cb(null,user)
+                }else if(!user.favorites){
+                    user.favorites = []
+                    return cb(null,user)
                 }else{
-
                     return cb(null,user)
                 }
             }else{

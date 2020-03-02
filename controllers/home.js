@@ -8,6 +8,7 @@ module.exports = {
 }
 
 function index(req,res){
+    console.log(req.user)
     Post.find({}).populate('username').then(function(posts){
         res.render('index',{
             posts,

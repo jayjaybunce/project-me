@@ -4,7 +4,8 @@ const Post = require('../models/post')
 module.exports = {
     create,
     index,
-    delete: deletePost
+    delete: deletePost,
+    update
 }
 
 
@@ -49,6 +50,12 @@ function index(req,res){
     })
 }
 
+function update(req,res){
+    Post.findByIdAndUpdate(req.params.id,req.body).then(post=>{
+        console.log(post)
+        res.redirect('/')
+    })
+}
 
 
 
