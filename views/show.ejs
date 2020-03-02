@@ -1,77 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ProjectMe: <%= title %></title>
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Raleway|Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
+<%- include('partials/small-header')%>
+<div id="message-bar"></div>
+<%- include('partials/navbar')%>
+<div id="centered-body-container">
     
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="icon" href="/images/logo.png">
-  </head>
-  <body>
-    
-    <header id="top-header-small">
-      <h1 id="main-brand-header-small">ProjectMe &nbsp;<span id="span-in-line-small">Find your next, perfect project!</span></h1>
-      <div id="login-signup-container-small">
-        <%if(user){%>
-          
-          
-          
-          Welcome! <span id="user-blue"><%=user.username%></span>
-          <a href="/logout"><button id="login">Log Out</button></a>
-          <%}else{%>
-            <a href="/auth/google"><button id="login">Log In With Google</button></a>
-          
-        <%}%>
-        
-      </div>
-    </header>
-    <div id="message-bar"></div>
-    <%- include('partials/navbar')%>
-    <div id="centered-body-container">
-      <span class="favorite-container"><h1 class="centeredh1 capitalize"><%=title%>
-        <%if(user){%>
-            <%if(user.favorites.includes(title)){%>
-                <form action="/user/favorites/<%=title%>" method="post"><button class="favorite-button-favorited">⭐</button>
-            <%}else{%>
-
-                <form action="/user/favorites/<%=title%>" method="post"><button class="favorite-button">⭐</button>
-            <%}%>
-        <%}%>
-        </form></h1></span>
-      
-      <%if(user){%>
-        <section class="new-post">
-          <form action="/posts" method="POST" autocomplete="off" class="post-form">
-            <input type="text" name="title" placeholder="Post Title" id="post-title-input">
-            <span id="user-tag">
-              Posting as <span id="user-blue"><%=user.username%></span>
-  
-            </span>
-            
-            <br>
-            <br>
-            <select name="category" id="post-category-input" placeholder="Category">
-              
-              <option name="<%=title%>" selected value="<%=title%>"><%=title.split('-').join(' ')%></span></option>
-             
-  
-            </select>
-            <textarea name="content" id="post-content-input" placeholder="......">
-            </textarea>
-            <button type="submit" id="post-button">Post</button>
-          </form>
-          </select>       
-        </section>
-        <%}else{%>
-          
-      <%}%>
-        
-        <%posts.forEach(post=>{%>
         <section class="post" data-id="<%=post._id%>">
           <div id="author-profile">
             <div id="author-profile-pic">
-                
               <img src="<%=post.username.toObject().avatar%>" class="user-profile-pic"/>  
             </div>
             <h3>
@@ -190,10 +124,5 @@
               <%}%>
             </div>
         </section>
-        <%})%>
-  
-  
-    </div>
-    
-  </body>
-</html>
+        
+</div>

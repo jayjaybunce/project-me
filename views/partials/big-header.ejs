@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Raleway|Roboto+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/logo.png">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script defer src="javascripts/main.js"></script>
+  </head>
+  <body>
+    
+    <header id="top-header-big">
+      <h1 id="main-brand-header">ProjectMe &nbsp;<span id="span-in-line">Find your next, perfect project!</span></h1>
+      <div id="login-signup-container">
+        <%if(user){%>
+          
+          
+          
+          Welcome! <span id="user-blue"><%=user.username%></span>
+          <a href="/logout"><button id="login">Log Out</button></a>
+          <%}else{%>
+            <a href="/auth/google"><button id="login">Log In With Google</button></a>
+          
+        <%}%>
+        
+      </div>
+    </header>

@@ -7,6 +7,7 @@
     
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="icon" href="/images/logo.png">
+    <script defer src="../javascripts/main.js"></script>
   </head>
   <body>
     
@@ -26,17 +27,3 @@
         
       </div>
     </header>
-    <div id="message-bar"></div>
-    <%- include('partials/navbar')%>
-    <div id="centered-body-container">
-      <div class="categories-container">
-          <%categories.forEach(cat=>{%>
-            <div class="category-container">
-                <a href="/categories/<%=cat.split(' ').join('-')%>"><%=cat%></a>
-            </div>
-            <%})%>
-      </div>
-    </div>
-    
-  </body>
-</html>

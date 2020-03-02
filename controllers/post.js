@@ -5,7 +5,8 @@ module.exports = {
     create,
     index,
     delete: deletePost,
-    update
+    update,
+    show
 }
 
 
@@ -44,7 +45,7 @@ function index(req,res){
     Post.find({"username": req.user._id}).populate('username').then(function(posts){
         res.render('posts',{
             posts,
-            title: `${req.user.username}`,
+            title: 'Posts',
             user: req.user
         })
     })
@@ -55,6 +56,16 @@ function update(req,res){
         console.log(post)
         res.redirect('/')
     })
+}
+function show(req,res){
+    Post.findById(req.params.id).populate('username').then(post=>{
+        res.render('show',{
+            title: 'Post',
+            post,
+            user: req.user
+        })    
+    })
+
 }
 
 

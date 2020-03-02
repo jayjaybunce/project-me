@@ -240,6 +240,9 @@ a {
   border: none;
   border-bottom: 2px solid #1A1B1F;
 }
+.post-title a{
+  color: white;
+}
 #post-button{
   height: 40px;
   width: 80px;
@@ -766,4 +769,104 @@ a {
 }
 #blue{
   color:#6EB2C0;
+}
+.active{
+  text-decoration: underline !important; 
+  background-color: black;
+}
+#user-profile-container{
+  background-color: #1C1D22;
+  width:90%;  
+  margin:0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 10px 13px 2px #000000; 
+  box-shadow: 0px 10px 13px 2px #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 100px 100px 100px auto;
+  
+  height: 800px;
+}
+#favorites-container{
+  grid-template-columns: 1/2;
+  grid-row: 2/6;
+  text-align: justify;
+  
+  display: block;
+}
+#favorites-container{
+  color: white;
+  font-family: 'Montserrat';
+}
+#user-profile-about{
+  grid-row: 1/2;
+  grid-column: 1/4;
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat';
+}
+#user-profile-about h1{
+  
+  
+}
+.big-profile-round{
+  float: left;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  
+}
+#img-container{
+  float: left;
+  margin-top: -100px;
+}
+.big-header{
+  font-size: 40px;
+}
+.favorite-item{
+  margin-top: 20px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.favorite-item a{
+  
+  color: white;
+}
+#user-profile-main{
+  color: white;
+  font-family: 'Montserrat';
+  
+  
+  grid-row: 2/6;
+  grid-column: 2/6;
+}
+#user-profile-main{
+  font-size: 20px;
+}
+.blue-separators{
+  color: #6EB2C0;
+}
+.red-separators{
+  color: #B93B34;
+}
+.view-post{
+  height: 25px;
+  float: left;
+  font-size: 20px;
+  margin-left: -68px;
+  color: white;
+  font-family: 'Roboto';
+  background-color: #6EB2C0;
+  border: none;
+  padding: 10px;
+  line-height: 6px;
+  
+}
+.cat-separator{
+  color: #E35D33;
+  
+}
+.recent-item{
+  margin-top: 15px;
 }

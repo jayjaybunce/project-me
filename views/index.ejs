@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Raleway|Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
-    <link rel="icon" href="/images/logo.png">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script defer src="javascripts/main.js"></script>
-  </head>
-  <body>
-    
-    <header id="top-header-big">
-      <h1 id="main-brand-header">ProjectMe &nbsp;<span id="span-in-line">Find your next, perfect project!</span></h1>
-      <div id="login-signup-container">
-        <%if(user){%>
-          
-          
-          
-          Welcome! <span id="user-blue"><%=user.username%></span>
-          <a href="/logout"><button id="login">Log Out</button></a>
-          <%}else{%>
-            <a href="/auth/google"><button id="login">Log In With Google</button></a>
-          
-        <%}%>
-        
-      </div>
-    </header>
+<%- include('partials/big-header')%>
     <div id="message-bar"></div>
-    <nav id="nav-bar">
-      <ul>
-        <li><a href="/about">About</a></li>
-        <li><a href="/">ProjectMe</a></li>
-        <li><a href="/categories">Categories</a></li>
-        <li><a href="/posts">Posts</a></li>
-        <li><a href="/More">More</a></li>
-      </ul>
-    </nav>
+    <%- include('partials/navbar')%>
     <div id="centered-body-container">
       <h1 class="centeredh1"></h1>
       
@@ -52,14 +17,9 @@
           <br>
           <select name="category" id="post-category-input" placeholder="Category">
             <option value="" disabled selected>Select Category</option>
-            <option name="programming" value="programming">Programming</option>
-            <option name="carpentry" value="carpentry">Carpentry</option>
-            <option name="blacksmithing" value="blacksmithing">Blacksmithing</option>
-            <option name="machining" value="machining">Machining</option>
-            <option name="art" value="art">Art</option>
-            <option name="uxdesign" value="uxdesign">UX Design</option>
-            <option name="math" value="math">Math</option>
-            <option name="metalworking" value="metalworking">Metalworking</option>
+            <%categories.forEach(cat=>{%>
+              <option value="<%=cat%>" name="<%=cat%>"><%=cat%></option>  
+            <%})%>
 
           </select>
           <textarea name="content" id="post-content-input" placeholder="......">
