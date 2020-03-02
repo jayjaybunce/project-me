@@ -66,5 +66,5 @@ Database will follow the following structure
     *   [x] Implement User Stories after and only after authentication, signup and login are complete.
 *   [x] Test and secure Node and Express
 *   [ ] Create like functionality!
-*   Setup on Heroku
+*   [ ] Setup on Heroku
 
