@@ -8,20 +8,19 @@ module.exports = {
 
 
 function create(req,res){
-    // console.log('comment content',req.body.commentContent)
-    console.log(req.user.username,req.user.googleId)
-    Post.findById(req.params.id).then(post=>{
-        post.comments.push({
-            author: req.user.username,
-            googleId: req.user.googleId,
-            content: req.body.commentContent,
+    if(req.body.content){
+        Post.findById(req.params.id).then(post=>{
+            post.comments.push({
+                author: req.user.username,
+                content: req.body.commentContent
+            })
+            post.save(function(err,post){
+                if(err) console.log(err)
+                console.log(post)
+                res.redirect('/')
+            })
         })
-        post.save(function(err,post){
-            if(err) console.log(err)
-            console.log(post)
-            res.redirect('/')
-        })
-        
-    
-    })
+    }else{
+        res.redirect('/')
+    }
 }

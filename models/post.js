@@ -8,7 +8,6 @@ const commentSchema = new Schema({
         type: String,
         required: true
     },
-    googleId: String,
     content:{
         type: String
     }

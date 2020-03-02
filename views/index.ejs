@@ -101,7 +101,9 @@
             </span>
             <%if(user){%>
               <%if(post.username.toObject().googleId===user.googleId){%>
-              <button class="comment-button" data-id="<%=post._id%>">Comment</button>
+              
+                <button class="comment-button" data-id="<%=post._id%>">Comment</button>
+              
               <button class="like-button">Like</button>
               <button type="submit" class="edit-button">Edit</button>  
               <button type="submit" class="delete-button">Delete</button>          
@@ -123,9 +125,43 @@
             <textarea name="commentContent" class="comment-content-input"></textarea>
             <button type="submit" class="comment-post-button">Post</button>
           </form>
-          <div id="comments-wrapper">
-          <%if(post.comments){%>
-            <%=post.comments%>
+          <hr>
+          <div class="comments-wrapper">
+          <%if(user){%>
+          
+              <%if(post.comments){%>
+                <%post.comments.forEach(comment=>{%>
+                  <%if(comment.author===user.username){%>
+                    <div class="comment-wrapper">
+                      <h2 class="comment-author">
+                        
+                      </h2>
+                      <p class="comment-content">
+                        
+                      </p>
+                      <button>Edit</button>
+                      <button>Delete</button>
+                    </div>
+                    
+                    <%}else{%>
+                      <div class="comment-wrapper">
+                        <h2 class="comment-author">
+                          
+                        </h2>
+                        <p class="comment-content">
+                          
+                        </p>
+                        
+                      </div>
+                      
+                      <%}%>  
+                      <%})%>
+                    <%}%>
+              
+              
+              
+                         
+
             <%}%>
           </div>
       </section>
@@ -133,6 +169,6 @@
 
 
     </div>
-    
+   
   </body>
 </html>

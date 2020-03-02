@@ -607,3 +607,8 @@ a {
   padding: 10px;
 
 }
+.comment-wrapper{
+  background-color: #ededed;
+  border-radius: 20px;
+  padding: 10px;
+}

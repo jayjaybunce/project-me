@@ -44,9 +44,7 @@
             <input type="text" name="title" placeholder="Post Title" id="post-title-input">
             <span id="user-tag">
               Posting as <span id="user-blue"><%=user.username%></span>
-  
-            </span>
-            
+            </span>     
             <br>
             <br>
             <select name="category" id="post-category-input" placeholder="Category" required>
@@ -64,7 +62,6 @@
               <option name="graphicdesign" value="graphicdesign">Graphic Design</option>
               <option name="createiveprojects" value="createiveprojects">Creative Projects</option>
               <option name="miscellaneous" value="miscellaneous">Miscellaneous</option>
-              
             </select>
             <textarea name="content" id="post-content-input" placeholder="......">
             </textarea>
@@ -86,12 +83,8 @@
                 <%if(post.username){%>
                 <%=post.username.toObject().username%>
                 <%}%>
-                
               </h3>
-              <!-- <span class="post-time">3 Days Ago</span> -->
-              <!-- <p>/<%=post.categories%></p> -->
-              
-            </div>
+              </div>
             <p class="post-p">
               <%=post.content%>
             </p>

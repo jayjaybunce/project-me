@@ -11,6 +11,7 @@ const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const postRouter = require('./routes/post');
 const commentsRouter = require('./routes/comments')
+const apiRouter = require('./routes/api')
 const signupRouter = require('./routes/signup')
 const session = require('express-session')
 const passport = require('passport')
@@ -39,7 +40,7 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 app.use('/posts',postRouter);
-
+app.use('/api', apiRouter)
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
