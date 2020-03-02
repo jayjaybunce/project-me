@@ -629,3 +629,25 @@ a {
 .delete-form{
   float: right;
 }
+.edit-post-textarea{
+  width: 100%;
+  resize: none;
+  border-radius: 10px;
+  padding: 5px;
+  border: none;
+  height: 100px;
+  overflow: visible;
+  font-family: 'Montserrat';
+  font-size:13px;
+  
+}
+.update-post-button{
+  float: right;
+  margin-top: -20px;
+  z-index: 10;
+}
+.update-post-form{
+  z-index: 0;
+  grid-row: 2/3;
+  grid-column: 2/5;
+}
