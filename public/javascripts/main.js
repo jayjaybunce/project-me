@@ -14,6 +14,58 @@ let editCommentButtonEls = document.querySelectorAll('.comment-edit-button')
 editCommentButtonEls.forEach(el=>{
     el.addEventListener('click',handleCommentEdit)
 })
+
+let searchInputEl = document.querySelector('#search-bar-input')
+let postEls = document.querySelectorAll('.post-p')
+searchInputEl.addEventListener('input',handleSearch)
+
+
+
+
+
+
+
+function handleSearch(evt){
+    let value = searchInputEl.value
+    
+   postEls.forEach(el=>{
+        let searchAbleContent = el.parentElement.querySelector('#author-profile h3').textContent + 
+        el.parentElement.querySelector('.post-footer').textContent+
+        el.textContent+el.parentElement.querySelector('.post-title').textContent
+       if(searchAbleContent.includes(value)){
+           el.parentElement.style.display = 'grid'
+       }else if(value===""){
+            el.parentElement.style.display = 'grid'
+       }else{
+           el.parentElement.style.display = 'none'
+       }
+   })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function handleClick(evt){
     let postId = evt.target.parentElement.parentElement.parentElement.getAttribute('data-id')
     let commentEl = document.querySelectorAll(`[data-id="${postId}"]`)[2]
