@@ -36,7 +36,8 @@ function show(req,res){
         res.render('category',{
             posts,
             title: req.params.cat.split('-').join(' '),
-            user: req.user
+            user: req.user,
+            categories: categories.getAll()
         })
     })
 }

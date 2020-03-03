@@ -52,8 +52,16 @@
             <br>
             <br>
             <select name="category" id="post-category-input" placeholder="Category">
+              <%categories.forEach(cat=>{%>
+                <%if(cat!==title){%>
+                    <option name="<%=cat%>" value="<%cat%>"><%=cat%></option>    
+                <%}else{%>
+                    <option name="<%=cat%>" value="<%cat%>" selected><%=cat%></option>    
+                <%}%>
+                
+                
+            <%})%>
               
-              <option name="<%=title%>" selected value="<%=title%>"><%=title.split('-').join(' ')%></span></option>
              
   
             </select>
@@ -110,7 +118,20 @@
                   
                   </button>
                 
-                <button class="like-button">Like</button>
+                  <form class="like-form" action="/posts/<%=post._id%>" method="POST">
+                  
+                    <button type="submit" class="like-button like-button-bottomed">
+                    <%if(post.likedBy.includes(user._id)){%>
+  
+                      Unlike - <%=post.likedBy.length%>
+  
+                    <%}else{%>
+                        
+                        Like - <%=post.likedBy.length%>
+                    <%}%>
+                    
+                    </button>
+                  </form>
                 <button type="submit" class="edit-button">Edit</button>  
                 <form class="delete-form"action="/posts/<%=post._id%>?_method=DELETE" method="POST">
                   <button type="submit" class="delete-button">Delete</button>          
@@ -126,7 +147,20 @@
                     <%}%>
                   
                   </button>
-                <button class="like-button like-button-bottomed">Like</button>
+                  <form class="like-form" action="/posts/<%=post._id%>" method="POST">
+                  
+                    <button type="submit" class="like-button like-button-bottomed">
+                    <%if(post.likedBy.includes(user._id)){%>
+  
+                      Unlike - <%=post.likedBy.length%>
+  
+                    <%}else{%>
+                        
+                        Like - <%=post.likedBy.length%>
+                    <%}%>
+                    
+                    </button>
+                  </form>
     
                 <%}%>
               

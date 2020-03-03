@@ -5,6 +5,7 @@ const commentsCtrl = require('../controllers/comments')
 
 router.get('/', isLoggedIn, postCtrl.index)
 router.post('/', isLoggedIn, postCtrl.create)
+router.post('/:id',isLoggedIn, postCtrl.handleLike)
 router.get('/:id',postCtrl.show)
 router.delete('/:id', isLoggedIn , postCtrl.delete)
 router.post('/:id/comments', isLoggedIn, commentsCtrl.create)

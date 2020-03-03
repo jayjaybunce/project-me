@@ -37,7 +37,8 @@ const postSchema = new Schema({
     category: {
         type: String,
         required: true
-    }
+    },
+    likedBy: [Schema.Types.ObjectId]
 },{
     timestamps: true
 })

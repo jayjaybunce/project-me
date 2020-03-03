@@ -22,6 +22,8 @@ const userSchema = new Schema({
     googleId: String,
     favorites: [String],
     
+    
+    
 })
 
 module.exports = mongoose.model('User',userSchema)

@@ -6,7 +6,8 @@ module.exports = {
     index,
     delete: deletePost,
     update,
-    show
+    show,
+    handleLike
 }
 
 
@@ -15,6 +16,35 @@ function deletePost(req,res){
         post.remove()
         res.redirect('/')
     })
+}
+function handleLike(req,res){
+    Post.findById(req.params.id).then(post=>{
+        if(post.likedBy.includes(req.user._id)){
+            post.likedBy.forEach((like,index)=>{
+                if(like.toString()===req.user._id.toString()){
+                    if(post.likedBy.length===1){
+                        return post.likedBy = []
+                        
+                        
+                    }else{
+                        post.likedBy.splice(index,1)
+                        return;
+    
+                    }
+                }
+            })
+        }else{
+            post.likedBy.push(req.user._id)
+    
+        }
+        
+        post.save()
+
+        
+    })
+   
+   
+    res.redirect(`/posts/${req.params.id}`)
 }
 
 function create(req,res){
