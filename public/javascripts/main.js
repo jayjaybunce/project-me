@@ -32,7 +32,7 @@ function handleSearch(evt){
         let searchAbleContent = el.parentElement.querySelector('#author-profile h3').textContent + 
         el.parentElement.querySelector('.post-footer').textContent+
         el.textContent+el.parentElement.querySelector('.post-title').textContent
-       if(searchAbleContent.includes(value)){
+       if(searchAbleContent.toLowerCase().includes(value.toLowerCase())){
            el.parentElement.style.display = 'grid'
        }else if(value===""){
             el.parentElement.style.display = 'grid'
@@ -62,14 +62,15 @@ function handleSearch(evt){
 
 
 
-
+// https://mighty-stream-89823.herokuapp.com
+// http://localhost:3000
 
 
 
 function handleClick(evt){
     let postId = evt.target.parentElement.parentElement.parentElement.getAttribute('data-id')
     let commentEl = document.querySelectorAll(`[data-id="${postId}"]`)[2]
-    let url = `https://mighty-stream-89823.herokuapp.com/api/comments/${postId}`
+    let url = `http://localhost:3000/api/comments/${postId}`
     let commentWrapperEl = commentEl.querySelector('.comments-wrapper')
     let commentContainerEls = commentWrapperEl.querySelectorAll('.comment-wrapper')
     
