@@ -40,7 +40,7 @@
           </div>
           <h3>
             
-            <%=post.username.toObject().username%>
+            <a href="/posts/<%=post.id%>/author"><%=post.username.toObject().username%></a>
             
             
           </h3>
@@ -123,13 +123,30 @@
               <%}%>
             
           </div>
-          <%}%>
+        <%}else{%>
+          <button class="comment-button comment-button-bottomed" data-id="<%=post._id%>">
+            <%if(post.comments.length>1){%>
+              View <%=post.comments.length%> Comments
+            <%}else if(post.comments.length === 1){%>
+              View <%=post.comments.length%> Comment
+            <%}else{%>
+              Comment
+            <%}%>
+          
+          </button>
+        
+        
+          
+
+        <%}%>
         </div>
 
         
         
       </section>
-        <section class="post-comment-wrapper" data-id="<%=post._id%>">
+      <section class="post-comment-wrapper" data-id="<%=post._id%>">
+    
+        
           <form action="/posts/<%=post._id%>/comments" class="comment-form" method="POST">
             <textarea name="commentContent" class="comment-content-input"></textarea>
             <button type="submit" class="comment-post-button">Post</button>
@@ -153,6 +170,19 @@
                       </div>
                       <span class="comment-footer">
 
+                        <form action="/posts/<%=post.id%>/comments/<%=comment.id%>" method="POST" class="comment-like-form">
+                          <button type="submit" class="comment-like-button">
+                          <%if(comment.likedBy.includes(user._id)){%>
+
+                            Unlike - <%=comment.likedBy.length%>
+        
+                          <%}else{%>
+                              
+                              Like - <%=comment.likedBy.length%>
+                          <%}%>
+                          
+                          </button>
+                        </form>
                         <button class="comment-edit-button" data-id="<%=comment.id%>">Edit</button>
                         <form action="/posts/<%=post.id%>/comments/<%=comment.id%>?_method=DELETE" method="POST">
                           <button class="comment-delete-button">Delete</button>
@@ -179,7 +209,7 @@
               
                          
 
-            <%}%>
+                    <%}%>
           </div>
       </section>
       <%})%>

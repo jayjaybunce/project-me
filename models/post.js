@@ -11,7 +11,8 @@ const commentSchema = new Schema({
     content:{
         type: String,
         required: true
-    }
+    },
+    likedBy: [Schema.Types.ObjectId]
 })
 
 const postSchema = new Schema({

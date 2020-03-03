@@ -3,27 +3,20 @@
 <%- include('partials/navbar')%>
 <div id="user-profile-container">
     <div id="user-profile-about">
-        <h1 class="big-header"><%=user.username%></h1>
+        <h1 class="big-header"><%=otherUser.username%></h1>
         
         <div id="img-container">
-            <img src="<%=user.avatar%>" class="big-profile-round">
+            <img src="<%=otherUser.avatar%>" class="big-profile-round">
 
         </div>
    
 
     </div>
-    <div id="bio-wrapper">
-        <%if(user.bio){%>
-            
-            <button type="submit" id="update-bio-button">Update Bio</button>
-        <%}else{%>
-            <button type="submit" id="write-bio-button">Write Bio</button>
-        <%}%>
-      </div>
+    
     <div id="favorites-container">
         <h1>Favorites</h1>
-        <%if(user.favorites){%>
-            <%user.favorites.forEach(favorite=>{%>
+        <%if(otherUser.favorites){%>
+            <%otherUser.favorites.forEach(favorite=>{%>
                 <div class="favorite-item">
                     <li><a href="/categories/<%=favorite%>"><%=favorite.split('-').join(' ')%></a></li>
                 </div>
@@ -68,8 +61,8 @@
   
     </div>
     <div id="bio-content-wrapper">
-    <%if(user.bio){%>
-        <h2>Bio:</h2> <%=user.bio%>
+    <%if(otherUser.bio){%>
+        <h2>Bio:</h2> <%=otherUser.bio%>
     
     <%}else{%>
         

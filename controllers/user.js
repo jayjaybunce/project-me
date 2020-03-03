@@ -4,6 +4,27 @@ const categories = require('../models/categories')
 module.exports = {
     index,
     handleFavorite,
+    addBio,
+    updateBio,
+    show
+}
+
+function show(req,res){
+    Post.findById(req.params.id).populate('username').then(post=>{
+        
+        Post.find({"username":post.username.id}).then(posts=>{
+            
+            res.render('show-user',{
+            title: 'Profile',
+            otherUser: post.username.toObject(),
+            posts,
+            user: req.user
+            })
+        
+        })
+            
+        
+    })
 }
 
 function handleFavorite(req,res){
@@ -22,7 +43,18 @@ function handleFavorite(req,res){
     }
     res.redirect('/categories')
 }
-
+function addBio(req,res){
+    user = req.user
+    user.bio = req.body.bio
+    user.save()
+    res.redirect('/user')
+}
+function updateBio(req,res){
+    user = req.user
+    user.bio = req.body.bio
+    user.save()
+    res.redirect('/user')
+}
 function index(req,res){
     Post.find({"username": req.user.id}).then(posts=>{
         console.log(posts)

@@ -179,6 +179,10 @@ a {
   z-index: 9;
   
 }
+.post a {
+  color: black;
+  font-family: 'Montserrat';
+}
 
 .post:first-child{
   margin-top:0;
@@ -465,6 +469,9 @@ a {
   #post-title{
     width: 100%;
   }
+  .post{
+    height: 200px;
+  }
 }
 
 @media only screen 
@@ -670,8 +677,14 @@ a {
   font-family: 'Lobster Two';
   color: white;
   padding: 4px;
+  margin-left: 10px;
   font-size: 16px;
   display: inline;
+}
+#user-profile-about p{
+  margin-left: 350px;
+  color: black;
+  display: block;
 }
 .comment-delete-button{
   background-color: #B93B34;
@@ -840,6 +853,7 @@ a {
   
   grid-row: 2/6;
   grid-column: 2/6;
+  margin-left: 50px;
 }
 #user-profile-main{
   font-size: 20px;
@@ -872,4 +886,76 @@ a {
 }
 .like-form{
   display: inline;
+}
+.comment-like-button{
+  
+  background-color: #7DB1BE;
+  font-family: 'Lobster Two';
+  color: white;
+  padding: 4px;
+  font-size:16px;
+  display: inline;
+  
+}
+#bio-content-wrapper{
+  grid-column: 1/7;
+  grid-row: 6/7;
+  color: white;
+  font-size:14px;
+  font-family: 'Roboto';
+}
+.bio-form{
+  grid-row: 6/7;
+  grid-column: 1/7;
+  
+}
+#bio-wrapper{
+  grid-column: 6/7;
+  grid-row: 1/2;
+}
+.bio-button{
+  float: right;
+  padding: 2px;
+  font-size: 18px;
+  margin-top: 20px;
+  background-color: #1C1D22;
+  border: none;
+  border-radius: 0 10px 0 0 ;
+  position: relative;
+  z-index: 9;
+  color: white;
+  font-family: 'Lobster Two';
+}
+
+.textarea-bio{
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: -90px;
+  font-size: 18px;
+  font-family:  'Montserrat';
+  width: 98.5%;
+  resize: none;
+  border-radius: 10px;
+}
+#update-bio-button{
+  font-size: 20px;
+  background-color: #7DB1BE;
+  border: none;
+  color: white;
+  margin-top: -15px;
+  margin-right: -10px;
+  padding: 5px;
+  border-radius: 10px 0 0 10px ;
+  
+}
+#write-bio-button{
+  font-size: 20px;
+  background-color: #B93B34;
+  border: none;
+  color: white;
+  margin-top: -15px;
+  margin-right: -10px;
+  padding: 5px;
+  border-radius: 10px 0 0 10px ;
+
 }

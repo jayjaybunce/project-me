@@ -21,6 +21,7 @@ const userSchema = new Schema({
     },
     googleId: String,
     favorites: [String],
+    bio: String
     
     
     

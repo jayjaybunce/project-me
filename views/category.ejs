@@ -54,9 +54,9 @@
             <select name="category" id="post-category-input" placeholder="Category">
               <%categories.forEach(cat=>{%>
                 <%if(cat!==title){%>
-                    <option name="<%=cat%>" value="<%cat%>"><%=cat%></option>    
+                    <option name="<%=cat%>" value="<%=cat%>"><%=cat%></option>    
                 <%}else{%>
-                    <option name="<%=cat%>" value="<%cat%>" selected><%=cat%></option>    
+                    <option name="<%=cat%>" value="<%=cat%>" selected><%=cat%></option>    
                 <%}%>
                 
                 
@@ -69,7 +69,7 @@
             </textarea>
             <button type="submit" id="post-button">Post</button>
           </form>
-          </select>       
+               
         </section>
         <%}else{%>
           
@@ -84,8 +84,7 @@
             </div>
             <h3>
               
-              <%=post.username.toObject().username%>
-              
+              <a href="/posts/<%=post.id%>/author"><%=post.username.toObject().username%></a> 
               
             </h3>
   

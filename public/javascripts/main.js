@@ -17,7 +17,7 @@ editCommentButtonEls.forEach(el=>{
 function handleClick(evt){
     let postId = evt.target.parentElement.parentElement.parentElement.getAttribute('data-id')
     let commentEl = document.querySelectorAll(`[data-id="${postId}"]`)[2]
-    let url = `https://mighty-stream-89823.herokuapp.com/api/comments/${postId}`
+    let url = `http://localhost:3000/api/comments/${postId}`
     let commentWrapperEl = commentEl.querySelector('.comments-wrapper')
     let commentContainerEls = commentWrapperEl.querySelectorAll('.comment-wrapper')
     
@@ -90,4 +90,53 @@ function handleCommentEdit(evt){
     editCommentForm.appendChild(editButtonEl)
     parent.appendChild(editCommentForm)
     
+}
+if(document.querySelector('#user-profile-about')){
+    if(document.querySelector('#write-bio-button')){
+        let writeButtonEl = document.querySelector('#write-bio-button')
+        writeButtonEl.addEventListener('click',handleProfileClick)
+
+    }else{
+        let updateButtonEl = document.querySelector('#update-bio-button')
+        updateButtonEl.addEventListener('click',handleProfileUpdate)
+
+    }
+}
+
+
+function handleProfileClick(evt){
+    let profileContainer = document.querySelector('#user-profile-container')
+    let bioForm = document.createElement('form')
+    bioForm.setAttribute('method','POST')
+    bioForm.setAttribute('class','bio-form')
+    bioForm.setAttribute('action',`/user`)
+    let bioTextEl = document.createElement('textarea')
+    bioTextEl.setAttribute('name','bio')
+    bioTextEl.setAttribute('class','textarea-bio')
+    let bioButton = document.createElement('button')
+    bioButton.setAttribute('type','submit')
+    bioButton.setAttribute('class','bio-button')
+    bioButton.textContent = 'Update'
+    bioForm.appendChild(bioTextEl)
+    bioForm.appendChild(bioButton)
+    profileContainer.appendChild(bioForm)
+
+}
+
+function handleProfileUpdate(evt){
+    let profileContainer = document.querySelector('#user-profile-container')
+    let bioForm = document.createElement('form')
+    bioForm.setAttribute('method','POST')
+    bioForm.setAttribute('class','bio-form')
+    bioForm.setAttribute('action',`/user?_method=PUT`)
+    let bioTextEl = document.createElement('textarea')
+    bioTextEl.setAttribute('name','bio')
+    bioTextEl.setAttribute('class','textarea-bio')
+    let bioButton = document.createElement('button')
+    bioButton.setAttribute('type','submit')
+    bioButton.setAttribute('class','bio-button')
+    bioButton.textContent = 'Update'
+    bioForm.appendChild(bioTextEl)
+    bioForm.appendChild(bioButton)
+    profileContainer.appendChild(bioForm)
 }

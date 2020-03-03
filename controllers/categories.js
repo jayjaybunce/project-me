@@ -31,8 +31,7 @@ function index(req,res){
 }
 
 function show(req,res){
-    
-    Post.find({category: req.params.cat}).populate('username').then(posts=>{
+    Post.find({category: req.params.cat.split('-').join(' ')}).populate('username').then(posts=>{
         res.render('category',{
             posts,
             title: req.params.cat.split('-').join(' '),
