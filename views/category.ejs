@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ProjectMe: <%= title %></title>
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two|Raleway|Roboto+Condensed&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto|Ubuntu&display=swap" rel="stylesheet">
-    
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="icon" href="/images/logo.png">
-  </head>
-  <body>
-    
-    <header id="top-header-small">
-      <h1 id="main-brand-header-small">ProjectMe &nbsp;<span id="span-in-line-small">Find your next, perfect project!</span></h1>
-      <div id="login-signup-container-small">
-        <%if(user){%>
-          
-          
-          
-          Welcome! <span id="user-blue"><%=user.username%></span>
-          <a href="/logout"><button id="login">Log Out</button></a>
-          <%}else{%>
-            <a href="/auth/google"><button id="login">Log In With Google</button></a>
-          
-        <%}%>
-        
-      </div>
-    </header>
+<%- include('partials/small-header')%>
     <div id="message-bar"></div>
     <%- include('partials/navbar')%>
     <div id="centered-body-container">
