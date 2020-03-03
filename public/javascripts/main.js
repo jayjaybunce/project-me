@@ -17,7 +17,7 @@ editCommentButtonEls.forEach(el=>{
 function handleClick(evt){
     let postId = evt.target.parentElement.parentElement.parentElement.getAttribute('data-id')
     let commentEl = document.querySelectorAll(`[data-id="${postId}"]`)[2]
-    let url = `https://mighty-stream-89823.herokuapp.com/api/comments/${postId}`
+    let url = `http://localhost:3000/api/comments/${postId}`
     let commentWrapperEl = commentEl.querySelector('.comments-wrapper')
     let commentContainerEls = commentWrapperEl.querySelectorAll('.comment-wrapper')
     
