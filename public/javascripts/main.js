@@ -27,6 +27,8 @@ if(postEls.length!==0){
                 return text.replace(urlRegex, function(url) {
                     return '<a href="' + url + '" target="_blank">' + url + '</a>';
                 })
+                // or alternatively
+                // return text.replace(urlRegex, '<a href="$1">$1</a>')
             }
             
             var text = post.textContent;
@@ -67,7 +69,7 @@ function handleSearch(evt){
        })
     }
 }
-// https://blabs-project-me.herokuapp.com/
+// https://blabs-project-me.herokuapp.com
 // http://localhost:3000
 function handleClick(evt){
     let postId = evt.target.parentElement.parentElement.parentElement.getAttribute('data-id')
