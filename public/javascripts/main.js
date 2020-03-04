@@ -27,8 +27,6 @@ if(postEls.length!==0){
                 return text.replace(urlRegex, function(url) {
                     return '<a href="' + url + '" target="_blank">' + url + '</a>';
                 })
-                // or alternatively
-                // return text.replace(urlRegex, '<a href="$1">$1</a>')
             }
             
             var text = post.textContent;
@@ -74,7 +72,7 @@ function handleSearch(evt){
 function handleClick(evt){
     let postId = evt.target.parentElement.parentElement.parentElement.getAttribute('data-id')
     let commentEl = document.querySelectorAll(`[data-id="${postId}"]`)[2]
-    let url = `https://blabs-project-me.herokuapp.com/api/comments/${postId}`
+    let url = `http://localhost:3000/api/comments/${postId}`
     let commentWrapperEl = commentEl.querySelector('.comments-wrapper')
     let commentContainerEls = commentWrapperEl.querySelectorAll('.comment-wrapper')
     commentContainerEls.forEach(el=>{
