@@ -3,8 +3,6 @@ const router = express.Router()
 const postCtrl = require('../controllers/post')
 const commentsCtrl = require('../controllers/comments')
 const userCtrl = require('../controllers/user')
-
-
 router.get('/', isLoggedIn, postCtrl.index)
 router.get('/:id/author', userCtrl.show)
 router.post('/', isLoggedIn, postCtrl.create)
@@ -20,9 +18,4 @@ function isLoggedIn(req,res,next){
     if(req.isAuthenticated()) return next();
     res.redirect('/auth/google')
 }
-
-
-
-
-
 module.exports = router;

@@ -1,7 +1,5 @@
 const express = require('express')
 const Post = require('../models/post')
-
-
 module.exports = {
     getPostCommentsById,
 }

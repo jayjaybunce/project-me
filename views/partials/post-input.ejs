@@ -1,0 +1,27 @@
+<%if(user){%>
+    <section class="new-post">
+      <form action="/posts" method="POST" autocomplete="off" class="post-form">
+        <input type="text" name="title" placeholder="Post Title" id="post-title-input" required="true">
+        <span id="user-tag">
+          Posting as <span id="user-blue"><%=user.username%></span>
+
+        </span>
+        
+        <br>
+        <br>
+        <select name="category" id="post-category-input" placeholder="Category" required="true">
+          <option value="" disabled selected>Select Category</option>
+          <%categories.forEach(cat=>{%>
+            <option value="<%=cat%>" name="<%=cat%>"><%=cat%></option>  
+          <%})%>
+
+        </select>
+        <textarea name="content" id="post-content-input"  required>
+        </textarea>
+        <button type="submit" id="post-button">Post</button>
+      </form>
+      </select>       
+    </section>
+    <%}else{%>
+      
+  <%}%>

@@ -3,14 +3,10 @@
 <%- include('partials/navbar')%>
 <div id="user-profile-container">
     <div id="user-profile-about">
-        <h1 class="big-header"><%=user.username%></h1>
-        
+        <h1 class="big-header"><%=user.username%></h1>        
         <div id="img-container">
             <img src="<%=user.avatar%>" class="big-profile-round">
-
         </div>
-   
-
     </div>
     <div id="bio-wrapper">
         <%if(user.bio){%>
@@ -28,9 +24,7 @@
                     <li><a href="/categories/<%=favorite%>"><%=favorite.split('-').join(' ')%></a></li>
                 </div>
             <%})%>
-        <%}else{%>
-            
-            
+        <%}else{%>            
         <%}%>
     </div>
     <div id="user-profile-main">
@@ -40,12 +34,10 @@
             <div class="recent-item">
                 No posts yet! Lets fix that! <a href="/">Post</a>
             </div>
-        <%}else{%>
-        
+        <%}else{%>        
             <%posts.forEach(post=>{%>
                 <div class="recent-item">
-                    <a href="/posts/<%=post._id%>"><button class="view-post">View</button></a>
-                    
+                    <a href="/posts/<%=post._id%>"><button class="view-post">View</button></a>                    
                     <%=post.title%>
                     <span class="cat-separator">
                         //
@@ -60,21 +52,15 @@
                         <%=post.updatedAt.toLocaleTimeString()%>
                         <span class="red-separators">   &nbsp; ➔ &nbsp;</span>
                         <%=post.updatedAt.toDateString()%>
-                        <%}%>
-                        
+                        <%}%>                        
                     </div>
             <%})%>
         <%}%>
-  
     </div>
     <div id="bio-content-wrapper">
     <%if(user.bio){%>
-        <h2>Bio:</h2> <%=user.bio%>
-    
-    <%}else{%>
-        
-    <%}%>
-       
+        <h2>Bio:</h2> <%=user.bio%>    
+    <%}else{%>        
+    <%}%>       
     </div>
-   
 </div>

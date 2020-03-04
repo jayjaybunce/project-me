@@ -8,26 +8,15 @@ let editPostButtonEls = document.querySelectorAll('.edit-button')
 editPostButtonEls.forEach(el=>{
     el.addEventListener('click',handlePostEdit)
 })
-
-
 let editCommentButtonEls = document.querySelectorAll('.comment-edit-button')
 editCommentButtonEls.forEach(el=>{
     el.addEventListener('click',handleCommentEdit)
 })
-
 let searchInputEl = document.querySelector('#search-bar-input')
 let postEls = document.querySelectorAll('.post-p')
 searchInputEl.addEventListener('input',handleSearch)
-
-
-
-
-
-
-
 function handleSearch(evt){
-    let value = searchInputEl.value
-    
+    let value = searchInputEl.value    
    postEls.forEach(el=>{
         let searchAbleContent = el.parentElement.querySelector('#author-profile h3').textContent + 
         el.parentElement.querySelector('.post-footer').textContent+
@@ -41,59 +30,44 @@ function handleSearch(evt){
        }
    })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // https://mighty-stream-89823.herokuapp.com
 // http://localhost:3000
-
-
-
 function handleClick(evt){
     let postId = evt.target.parentElement.parentElement.parentElement.getAttribute('data-id')
     let commentEl = document.querySelectorAll(`[data-id="${postId}"]`)[2]
-    let url = `http://localhost:3000/api/comments/${postId}`
+    let url = `https://mighty-stream-89823.herokuapp.com/api/comments/${postId}`
     let commentWrapperEl = commentEl.querySelector('.comments-wrapper')
     let commentContainerEls = commentWrapperEl.querySelectorAll('.comment-wrapper')
-    
-        fetch(url).then(fResponse=>{            
-            return fResponse.json()
-        }).then(data=>{
-            console.log(data)
-            for(let i = 0;i<=data.length-1;i++){
-                let authorEl = commentContainerEls[i].querySelector('.comment-author')
-                let contentEl = commentContainerEls[i].querySelector('.comment-content')
-                authorEl.textContent = data[i].author
-                contentEl.textContent = data[i].content
+    commentContainerEls.forEach(el=>{
+        if(el.getAttribute('data-id')!=='filled'){
+            fetch(url).then(fResponse=>{            
+                return fResponse.json()
+            }).then(data=>{
+                console.log(data)
+                for(let i = 0;i<=data.length-1;i++){
+                    let authorEl = commentContainerEls[i].querySelector('.comment-author')
+                    let contentEl = commentContainerEls[i].querySelector('.comment-content')
+                    authorEl.textContent = data[i].author
+                    contentEl.textContent = data[i].content
+                    commentContainerEls[i].setAttribute('data-id','filled')
+                }
+            })
+            if(getComputedStyle(commentEl).display==='none'){
+                commentEl.style.display ='block'     
+            }else{
+                commentEl.style.display ='none'
             }
-        })
-        if(getComputedStyle(commentEl).display==='none'){
-            commentEl.style.display ='block'     
         }else{
-            commentEl.style.display ='none'
+            if(getComputedStyle(commentEl).display==='none'){
+                commentEl.style.display ='block'     
+            }else{
+                commentEl.style.display ='none'
+            }
         }
+    
         
-
+})
 }
-
 function handlePostEdit(evt){
     let postContentEl = evt.target.parentElement.parentElement.parentElement
     let pId = postContentEl.getAttribute('data-id')
@@ -117,8 +91,6 @@ function handlePostEdit(evt){
     postContentEl.appendChild(updateButtonForm)
     updateButtonForm.appendChild(updateButtonEl)
 }
-
-
 function handleCommentEdit(evt){
     let parent = evt.target.parentElement.parentElement.querySelector('.edit-form-container')
     console.log(parent)
@@ -142,21 +114,16 @@ function handleCommentEdit(evt){
     editCommentForm.appendChild(textAreaEl)
     editCommentForm.appendChild(editButtonEl)
     parent.appendChild(editCommentForm)
-    
 }
 if(document.querySelector('#user-profile-about')){
     if(document.querySelector('#write-bio-button')){
         let writeButtonEl = document.querySelector('#write-bio-button')
         writeButtonEl.addEventListener('click',handleProfileClick)
-
     }else{
         let updateButtonEl = document.querySelector('#update-bio-button')
         updateButtonEl.addEventListener('click',handleProfileUpdate)
-
     }
 }
-
-
 function handleProfileClick(evt){
     let profileContainer = document.querySelector('#user-profile-container')
     let bioForm = document.createElement('form')
@@ -173,9 +140,7 @@ function handleProfileClick(evt){
     bioForm.appendChild(bioTextEl)
     bioForm.appendChild(bioButton)
     profileContainer.appendChild(bioForm)
-
 }
-
 function handleProfileUpdate(evt){
     let profileContainer = document.querySelector('#user-profile-container')
     let bioForm = document.createElement('form')

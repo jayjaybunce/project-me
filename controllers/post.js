@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Post = require('../models/post')
-
+const categories = require('../models/categories')
 module.exports = {
     create,
     index,
@@ -92,7 +92,8 @@ function index(req,res){
         res.render('posts',{
             posts,
             title: 'Posts',
-            user: req.user
+            user: req.user,
+            categories: categories.getAll()
         })
     })
 }

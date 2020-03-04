@@ -181,6 +181,9 @@ a {
   transition: 0.2s linear;
   
 }
+.post:hover{
+  background-color: #f0f0f0;
+}
 .post a {
   color: black;
   font-family: 'Montserrat';
@@ -638,6 +641,8 @@ a {
   background-color: #ededed;
   border-radius: 20px;
   padding: 10px;
+  
+  border-bottom: 1px solid #8A1E22;
 }
 .delete-form{
   float: right;
@@ -737,6 +742,8 @@ a {
   font-family: 'Montserrat';
   padding: 10px;
   margin-top: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
   background: rgb(46,47,51);
   background: linear-gradient(45deg, rgba(46,47,51,1) 95%, rgba(110,178,192,1) 95%);
   border-bottom: 4px solid #6EB2C0;
@@ -757,7 +764,7 @@ a {
 }
 .categories-container{
   margin: 0 auto;
-  margin-top: 7vw;
+  margin-top: ;
   margin-bottom: 150px;
   width: 85%;
   display: flex;
