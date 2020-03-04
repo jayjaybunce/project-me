@@ -1,17 +1,32 @@
+# Completed - There's more work to do!
+## Optimizations
+* [x] When making fetch request to API for comments, only fetch once.
+* [ ] Clean and optimize client side JavaScript used for handling likes as well as post and comment editing.
+* [x] Due to EJS use, use partials to decrease initial file size and ensure changes made to one partial transfer to all pages 
+## Features To Add
+* [ ] User to user messaging - See development branch
+* [ ] Subcommenting - Facebook style embedding comment within comment.
+* [ ] Users can enable category suggestion for when they post. 
+  * [ ] If a user consistently posts, category will be preset to their most used category
+* [ ] User profile customization - Custom avatar and layout.
+* [ ] Admin tools 
+* [ ] Metrics systems
+
+
+
 # ProjectMe
 ## Built using a Node and Express server, Mongoose, and MongoDB along with minimal frontend JavaScript and jQuery.
 ### ProjectMe is a CRUD Web-App that implements features for the following user stories
 * [x] AAU, I want to create an account using Google OAuth
 * [x] AAU, I want to be able to login
 * [x] AAU, I want to be able to create a post based on my current skills and specifify the technologies I want to learn or want to improve.
-*  AAU, I want to be able to comment and like other Project posts
+*  [x] AAU, I want to be able to comment and like other Project posts
 * [x] AAU, I want to be able to edit and delete my posts
 * [x] AAU, I want to be able to edit and delete my comments
 
 ---
 ### For this project, I have outlined the Data Structure I will follow
 <br>
-Database will follow the following structure
 
 ![Database ERD Structure](https://i.imgur.com/7mq8JpX.png)
 
@@ -39,6 +54,9 @@ Database will follow the following structure
 ![Sometext](https://i.imgur.com/SJ47ZWL.png)
 ### Categories
 ![Sometext](https://i.imgur.com/C5C5Pgp.png)
+### User profile
+![Sometext](https://i.imgur.com/LNTOgmK.png)
+
 ## Trello: https://trello.com/b/ZpDc0BVY/projectme
 ### To-Do - Updating as features and/or user stories are added.
 *   [x] Create wireframe for landing page
@@ -65,6 +83,6 @@ Database will follow the following structure
     *   [x] Ensure anonymous users while not logged in cannot post or comment
     *   [x] Implement User Stories after and only after authentication, signup and login are complete.
 *   [x] Test and secure Node and Express
-*   [ ] Create like functionality!
-*   [ ] Setup on Heroku
+*   [x] Create like functionality!
+*   [x] Setup on Heroku
 
