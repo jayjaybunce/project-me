@@ -72,7 +72,7 @@ function handleSearch(evt){
 function handleClick(evt){
     let postId = evt.target.parentElement.parentElement.parentElement.getAttribute('data-id')
     let commentEl = document.querySelectorAll(`[data-id="${postId}"]`)[2]
-    let url = `http://localhost:3000/api/comments/${postId}`
+    let url = `https://blabs-project-me.herokuapp.com/api/comments/${postId}`
     let commentWrapperEl = commentEl.querySelector('.comments-wrapper')
     let commentContainerEls = commentWrapperEl.querySelectorAll('.comment-wrapper')
     commentContainerEls.forEach(el=>{
