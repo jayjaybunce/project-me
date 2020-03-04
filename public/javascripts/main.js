@@ -14,28 +14,67 @@ editCommentButtonEls.forEach(el=>{
 })
 let searchInputEl = document.querySelector('#search-bar-input')
 let postEls = document.querySelectorAll('.post-p')
+
 searchInputEl.addEventListener('input',handleSearch)
-function handleSearch(evt){
-    let value = searchInputEl.value    
-   postEls.forEach(el=>{
-        let searchAbleContent = el.parentElement.querySelector('#author-profile h3').textContent + 
-        el.parentElement.querySelector('.post-footer').textContent+
-        el.textContent+el.parentElement.querySelector('.post-title').textContent
-       if(searchAbleContent.toLowerCase().includes(value.toLowerCase())){
-           el.parentElement.style.display = 'grid'
-       }else if(value===""){
-            el.parentElement.style.display = 'grid'
-       }else{
-           el.parentElement.style.display = 'none'
-       }
-   })
+let catEls = document.querySelectorAll('.category-container')
+
+if(postEls.length!==0){
+    postEls.forEach(post=>{
+        if(post.textContent.includes('http')){
+
+            function urlify(text) {
+                var urlRegex = /(https?:\/\/[^\s]+)/g;
+                return text.replace(urlRegex, function(url) {
+                    return '<a href="' + url + '" target="_blank">' + url + '</a>';
+                })
+                // or alternatively
+                // return text.replace(urlRegex, '<a href="$1">$1</a>')
+            }
+            
+            var text = post.textContent;
+            var html = urlify(text);
+            post.innerHTML = html
+            console.log(html)
+        }
+    })
 }
-// https://mighty-stream-89823.herokuapp.com
+
+        
+function handleSearch(evt){
+    if(postEls.length ===0){
+        
+        let value = searchInputEl.value 
+        catEls.forEach(el=>{
+            if(el.textContent.toLowerCase().includes(value.toLowerCase())){
+                el.style.display = 'block'
+            }else if(value===""){
+                el.style.display = 'block'
+            }else{
+                el.style.display = 'none'
+            }
+        })
+    }else{
+        let value = searchInputEl.value    
+       postEls.forEach(el=>{
+            let searchAbleContent = el.parentElement.querySelector('#author-profile h3').textContent + 
+            el.parentElement.querySelector('.post-footer').textContent+
+            el.textContent+el.parentElement.querySelector('.post-title').textContent
+           if(searchAbleContent.toLowerCase().includes(value.toLowerCase())){
+               el.parentElement.style.display = 'grid'
+           }else if(value===""){
+                el.parentElement.style.display = 'grid'
+           }else{
+               el.parentElement.style.display = 'none'
+           }
+       })
+    }
+}
+// https://blabs-project-me.herokuapp.com/
 // http://localhost:3000
 function handleClick(evt){
     let postId = evt.target.parentElement.parentElement.parentElement.getAttribute('data-id')
     let commentEl = document.querySelectorAll(`[data-id="${postId}"]`)[2]
-    let url = `http://localhost:3000/api/comments/${postId}`
+    let url = `https://blabs-project-me.herokuapp.com/api/comments/${postId}`
     let commentWrapperEl = commentEl.querySelector('.comments-wrapper')
     let commentContainerEls = commentWrapperEl.querySelectorAll('.comment-wrapper')
     commentContainerEls.forEach(el=>{
@@ -43,7 +82,7 @@ function handleClick(evt){
             fetch(url).then(fResponse=>{            
                 return fResponse.json()
             }).then(data=>{
-                console.log(data)
+                
                 for(let i = 0;i<=data.length-1;i++){
                     let authorEl = commentContainerEls[i].querySelector('.comment-author')
                     let contentEl = commentContainerEls[i].querySelector('.comment-content')
