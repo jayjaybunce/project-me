@@ -1,18 +1,6 @@
 # Completed - There's more work to do!
-## Optimizations
-* [x] When making fetch request to API for comments, only fetch once.
-* [ ] Clean and optimize client side JavaScript used for handling likes as well as post and comment editing.
-* [x] Due to EJS use, use partials to decrease initial file size and ensure changes made to one partial transfer to all pages 
-## Features To Add
-* [ ] User to user messaging - See development branch
-* [ ] Subcommenting - Facebook style embedding comment within comment.
-* [ ] Users can enable category suggestion for when they post. 
-  * [ ] If a user consistently posts, category will be preset to their most used category
-* [ ] User profile customization - Custom avatar and layout.
-* [ ] Admin tools 
-* [ ] Metrics systems
-
-
+## Check it out: https://blabs-project-me.herokuapp.com/
+## Trello: https://trello.com/b/ZpDc0BVY/projectme
 
 # ProjectMe
 ## Built using a Node and Express server, Mongoose, and MongoDB along with minimal frontend JavaScript and jQuery.
@@ -57,32 +45,21 @@
 ### User profile
 ![Sometext](https://i.imgur.com/LNTOgmK.png)
 
-## Trello: https://trello.com/b/ZpDc0BVY/projectme
-### To-Do - Updating as features and/or user stories are added.
-*   [x] Create wireframe for landing page
-*   [x] Create wireframe for login page
-*   [x] Create wireframe for signup page
-*   [x] Code and style landing page
-    *   [x] Ensure proper post section scaling with size of post
-        *   [x] Use CSS grid to ensure no movement of sibling elements
-    *   [x] Ensure proper placement of elements on page
-        *   [x] Use CSS grid to ensure consistent placement upon varying width
-*   [x] Code and style login page - REMOVED- USING OAUTH
-  
-*   [x] Code and style signup page - REMOVED- USING OAUTH
-    
-*   [x] Create wireframe for user profile page
-*   [x] Creat wireframe for post page
-*   [x] Create wireframe for categories page for use in Version 2
-*   [x] Configure Node and Express along with OAuth, Express sessions and dotenv
-    *   [x] configure Db 
-    *   [x] implement user Schmea with Mongoose
-        *   [x] Test and secure
-*   [x] Configure Authentication tokens and sessions for user login and logout  - REMOVED- USING OAUTH
-    *   [x] Ensure posts can only be made from the user when logged in
-    *   [x] Ensure anonymous users while not logged in cannot post or comment
-    *   [x] Implement User Stories after and only after authentication, signup and login are complete.
-*   [x] Test and secure Node and Express
-*   [x] Create like functionality!
-*   [x] Setup on Heroku
+
+
+## Optimizations
+* [x] When making fetch request to API for comments, only fetch once.
+* [ ] Clean and optimize client side JavaScript used for handling likes as well as post and comment editing.
+* [x] Due to EJS use, use partials to decrease initial file size and ensure changes made to one partial transfer to all pages 
+## Features To Add
+* [ ] User to user messaging - See development branch
+* [ ] Subcommenting - Facebook style embedding comment within comment.
+* [ ] Users can enable category suggestion for when they post. 
+  * [ ] If a user consistently posts, category will be preset to their most used category
+* [ ] User profile customization - Custom avatar and layout.
+* [ ] Admin tools 
+* [ ] Metrics systems
+
+
+
 
