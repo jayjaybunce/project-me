@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-
-
-
+const User = require('../models/user')
 
 
 
@@ -32,13 +30,11 @@ const messageSchema = new Schema({
 const threadSchema = new Schema({
     startUser: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
+        ref: 'User'
     },
     receivingUser: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
+        ref: 'User'
     },
     messages: [messageSchema]
 
@@ -48,26 +44,4 @@ const threadSchema = new Schema({
 
 
 
-const userSchema = new Schema({
-    username: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true
-    },
-    avatar:{
-        type: String,
-        require: true,
-    },
-    googleId: String,
-    favorites: [String],
-    bio: String,
-    threads: [threadSchema]
-    
-    
-    
-})
-
-module.exports = mongoose.model('User',userSchema)
+module.exports = mongoose.model('Thread',threadSchema)

@@ -81,6 +81,7 @@
     <section class="post-comment-wrapper" data-id="<%=post._id%>">
         <form action="/posts/<%=post._id%>/comments" class="comment-form" method="POST">
           <textarea name="commentContent" class="comment-content-input"></textarea>
+          <p id="comment-char-count">0</p>
           <button type="submit" class="comment-post-button">Post</button>
         </form>
         <hr>

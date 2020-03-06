@@ -34,11 +34,28 @@ if(postEls.length!==0){
             var text = post.textContent;
             var html = urlify(text);
             post.innerHTML = html
-            console.log(html)
+            
         }
     })
 }
-
+if(document.querySelector('.comment-content-input')){
+    let commentFormEls = document.querySelectorAll('.comment-content-input')
+    commentFormEls.forEach(el=>{
+        el.addEventListener('input',handleCommentCharCount)
+    })
+}
+if(document.querySelector('#post-content-input')){
+    let postFormTextArea = document.querySelector('#post-content-input')
+    postFormTextArea.addEventListener('input',handlePostCharCount)
+}
+function handlePostCharCount(evt){
+    let charCountEl = document.querySelector('#post-char-count')
+    charCountEl.textContent = evt.target.value.length
+}
+function handleCommentCharCount(evt){
+    let charCounterEl = evt.target.parentElement.querySelector('#comment-char-count')
+    charCounterEl.textContent = evt.target.value.length
+}
         
 function handleSearch(evt){
     if(postEls.length ===0){
@@ -91,21 +108,18 @@ function handleClick(evt){
                     commentContainerEls[i].setAttribute('data-id','filled')
                 }
             })
-            if(getComputedStyle(commentEl).display==='none'){
-                commentEl.style.display ='block'     
-            }else{
-                commentEl.style.display ='none'
-            }
+            
         }else{
-            if(getComputedStyle(commentEl).display==='none'){
-                commentEl.style.display ='block'     
-            }else{
-                commentEl.style.display ='none'
-            }
+            
         }
     
         
 })
+if(getComputedStyle(commentEl).display==='none'){
+    commentEl.style.display ='block'     
+}else{
+    commentEl.style.display ='none'
+}
 }
 function handlePostEdit(evt){
     let postContentEl = evt.target.parentElement.parentElement.parentElement

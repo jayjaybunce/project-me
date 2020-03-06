@@ -921,6 +921,7 @@ a {
 #bio-wrapper{
   grid-column: 6/7;
   grid-row: 1/2;
+  
 }
 .bio-button{
   float: right;
@@ -984,6 +985,57 @@ a {
   width: 200px;
 }
 
+.message-form-button{
+display: block;
+margin-right: -10px;
+
+
+}
+
+.messages-button{
+  font-size: 20px;
+  
+  border: none;
+  
+  margin-left: 9px;
+  padding: 5px;
+  border-radius: 10px 0 0 10px ;
+}
+#messages-container{
+  background-color: #1C1D22;
+  width:70%;  
+  margin:0 auto;
+  margin-top: 20px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 10px 13px 2px #000000; 
+  box-shadow: 0px 10px 13px 2px #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50px 100px 100px auto;
+}
+#new-thread-form{
+  grid-row: 1/2;
+  grid-column: 1/6;
+  background-color: white;
+}
+#thread-list{
+  background-color: blue;
+  grid-row: 2/4;
+  grid-column: 1/2;
+}
+#post-char-count{
+  float: right;
+  margin-top: -110px;
+  margin-right: 10px;
+  
+}
+#comment-char-count{
+  float: right;
+  margin-top: -30px;
+  margin-right: 4px;
+  position: relative;
+  z-index: 9x;
+}
 
 
 
