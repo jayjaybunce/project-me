@@ -116,11 +116,23 @@
                   </div>
                   <%}else{%>
                     <div class="comment-wrapper">
+                      
                       <h2 class="comment-author">
                         
                       </h2>
                       <p class="comment-content">
                       </p>
+                      <span class="comment-footer">
+                        <form action="/posts/<%=post.id%>/comments/<%=comment.id%>" method="POST" class="comment-like-form">
+                          <button type="submit" class="comment-like-button">
+                          <%if(comment.likedBy.includes(user._id)){%>
+                            Unlike - <%=comment.likedBy.length%>
+                          <%}else{%>
+                              Like - <%=comment.likedBy.length%>
+                          <%}%>
+                          </button>
+                        </form>
+                      </span>
                     </div>
                     <%}%>  
                     <%})%>
